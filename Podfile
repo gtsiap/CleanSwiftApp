@@ -14,9 +14,11 @@ target 'CleanSwiftApp' do
 end
 
 target 'data' do
+    pod 'RxCocoa', '~> 4.0'
 end
 
 target 'Domain' do
+
 end
 
 post_install do |installer|

@@ -15,8 +15,6 @@ class PostViewCell: BaseViewCell<Presentation.Post> {
     @IBOutlet weak var descriptionLabel: UILabel!
     
     override func configureCell(item: Post) {
-        print(item)
-
         titleLabel.text = item.title
         descriptionLabel.text = item.description
     }

@@ -26,6 +26,10 @@
 		4514555B2019F61C00939DC0 /* PostViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4514555A2019F61C00939DC0 /* PostViewCell.swift */; };
 		4514555E2019F81800939DC0 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4514555D2019F81800939DC0 /* BaseViewController.swift */; };
 		45145560201A092E00939DC0 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4514555F201A092E00939DC0 /* BaseTableViewCell.swift */; };
+		45145563201A0DC900939DC0 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45145562201A0DC900939DC0 /* NetworkService.swift */; };
+		45145565201A0DE000939DC0 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45145564201A0DE000939DC0 /* Route.swift */; };
+		45145569201A11C800939DC0 /* PostsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45145568201A11C800939DC0 /* PostsStore.swift */; };
+		4514556C201A12F300939DC0 /* FetchPostsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4514556B201A12F300939DC0 /* FetchPostsResponse.swift */; };
 		4532F0262019D804003BB701 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4532F0252019D804003BB701 /* AppDelegate.swift */; };
 		4532F02B2019D804003BB701 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4532F0292019D804003BB701 /* Main.storyboard */; };
 		4532F02D2019D804003BB701 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4532F02C2019D804003BB701 /* Assets.xcassets */; };
@@ -152,6 +156,10 @@
 		4514555A2019F61C00939DC0 /* PostViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewCell.swift; sourceTree = "<group>"; };
 		4514555D2019F81800939DC0 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		4514555F201A092E00939DC0 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		45145562201A0DC900939DC0 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		45145564201A0DE000939DC0 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		45145568201A11C800939DC0 /* PostsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsStore.swift; sourceTree = "<group>"; };
+		4514556B201A12F300939DC0 /* FetchPostsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPostsResponse.swift; sourceTree = "<group>"; };
 		45257CF6E9A8A65A7A9E2700 /* Pods-CleanSwiftApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CleanSwiftApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-CleanSwiftApp/Pods-CleanSwiftApp.release.xcconfig"; sourceTree = "<group>"; };
 		4532F0222019D804003BB701 /* CleanSwiftApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanSwiftApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4532F0252019D804003BB701 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -344,6 +352,48 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		45145561201A0DB200939DC0 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				4514556A201A12E000939DC0 /* Responses */,
+				45145562201A0DC900939DC0 /* NetworkService.swift */,
+				45145564201A0DE000939DC0 /* Route.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		45145566201A117B00939DC0 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				45145567201A11A100939DC0 /* Stores */,
+				4514552B2019EF3600939DC0 /* PostsRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		45145567201A11A100939DC0 /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+				45145568201A11C800939DC0 /* PostsStore.swift */,
+			);
+			path = Stores;
+			sourceTree = "<group>";
+		};
+		4514556A201A12E000939DC0 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				4514556B201A12F300939DC0 /* FetchPostsResponse.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		4514556D201A13AA00939DC0 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 		4532F0192019D804003BB701 = {
 			isa = PBXGroup;
 			children = (
@@ -426,9 +476,11 @@
 		45961AE72019DB0200EF5B5C /* data */ = {
 			isa = PBXGroup;
 			children = (
+				4514556D201A13AA00939DC0 /* Entities */,
+				45145566201A117B00939DC0 /* Repositories */,
+				45145561201A0DB200939DC0 /* Remote */,
 				45961AE82019DB0200EF5B5C /* data.h */,
 				45961AE92019DB0200EF5B5C /* Info.plist */,
-				4514552B2019EF3600939DC0 /* PostsRepository.swift */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -940,6 +992,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45145565201A0DE000939DC0 /* Route.swift in Sources */,
+				45145569201A11C800939DC0 /* PostsStore.swift in Sources */,
+				45145563201A0DC900939DC0 /* NetworkService.swift in Sources */,
+				4514556C201A12F300939DC0 /* FetchPostsResponse.swift in Sources */,
 				4514552C2019EF3600939DC0 /* PostsRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
