@@ -1,0 +1,20 @@
+*.xcodeproj/project.xcworkspace/
+*.xcodeproj/xcuserdata/
+*.xcworkspace/xcshareddata/
+*.xcworkspace/xcuserdata/
+.DS_Store
+Carthage/*
+*.ipa
+*.app.*
+build
+fastlane/report.xml
+tools/apns/node_modules
+# pem files
+fastlane/README.md
+fastlane/report.xml
+.idea
+dependency_versions
+Pods
+Enviroment/Secrets.swift
+*.cer
+*.mobileprovision
