@@ -6,4 +6,7 @@
 //  Copyright © 2018 Giorgos Tsiapaliokas. All rights reserved.
 //
 
-import Foundation
+public struct User {
+    public let id: Int
+    public let avatar: URL
+}

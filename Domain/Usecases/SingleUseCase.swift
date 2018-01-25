@@ -6,4 +6,10 @@
 //  Copyright © 2018 Giorgos Tsiapaliokas. All rights reserved.
 //
 
-import Foundation
+import RxSwift
+
+public protocol SingleUseCase {
+    associatedtype Result
+
+    func execute() -> Single<Result>
+}

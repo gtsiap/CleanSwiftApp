@@ -6,4 +6,8 @@
 //  Copyright © 2018 Giorgos Tsiapaliokas. All rights reserved.
 //
 
-import Foundation
+import RxSwift
+
+public protocol PostsRepository {
+    func fetchPosts() -> Observable<[Post]>
+}

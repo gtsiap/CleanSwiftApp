@@ -13,7 +13,7 @@ target 'CleanSwiftApp' do
     pod 'RxDataSources', '~> 3.0'
 end
 
-target 'Data' do
+target 'data' do
 end
 
 target 'Domain' do

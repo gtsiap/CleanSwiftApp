@@ -10,6 +10,7 @@ import Domain
 import RxSwift
 
 public class PostsRepository: Domain.PostsRepository {
+    public init() {}
 
     public func fetchPosts() -> Observable<[Post]> {
         return Observable.just([Post]())

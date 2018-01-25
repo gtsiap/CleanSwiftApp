@@ -8,6 +8,14 @@
 
 import RxSwift
 
-public class FetchPostsUseCase {
-    
+public class FetchPostsUseCase: SingleUseCase {
+    private let postsRepository: PostsRepository
+
+    public init(postsRepository: PostsRepository) {
+        self.postsRepository = postsRepository
+    }
+
+    public func execute() -> Single<[Post]> {
+        return postsRepository.fetchPosts().asSingle()
+    }
 }
