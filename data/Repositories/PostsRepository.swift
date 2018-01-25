@@ -10,9 +10,12 @@ import Domain
 import RxSwift
 
 public class PostsRepository: Domain.PostsRepository {
-    public init() {}
+    private let remoteStore: PostsStore
+    public init(remoteStore: PostsStore) {
+        self.remoteStore = remoteStore
+    }
 
     public func fetchPosts() -> Observable<[Post]> {
-        return Observable.just([Post]())
+        return remoteStore.fetchPosts().map(PostEntity.map)
     }
 }

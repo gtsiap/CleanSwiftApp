@@ -30,6 +30,10 @@
 		45145565201A0DE000939DC0 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45145564201A0DE000939DC0 /* Route.swift */; };
 		45145569201A11C800939DC0 /* PostsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45145568201A11C800939DC0 /* PostsStore.swift */; };
 		4514556C201A12F300939DC0 /* FetchPostsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4514556B201A12F300939DC0 /* FetchPostsResponse.swift */; };
+		45145571201A147400939DC0 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4514556F201A147400939DC0 /* Model.xcdatamodeld */; };
+		45145575201A1B9900939DC0 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45145574201A1B9900939DC0 /* CoreDataStack.swift */; };
+		45145578201A1DFC00939DC0 /* DataToDomainMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45145577201A1DFC00939DC0 /* DataToDomainMapper.swift */; };
+		4514557A201A1E4700939DC0 /* PostEntity+Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45145579201A1E4700939DC0 /* PostEntity+Mapper.swift */; };
 		4532F0262019D804003BB701 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4532F0252019D804003BB701 /* AppDelegate.swift */; };
 		4532F02B2019D804003BB701 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4532F0292019D804003BB701 /* Main.storyboard */; };
 		4532F02D2019D804003BB701 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4532F02C2019D804003BB701 /* Assets.xcassets */; };
@@ -73,6 +77,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 451455312019F0D400939DC0;
 			remoteInfo = Presentation;
+		};
+		45145572201A177700939DC0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4532F01A2019D804003BB701 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 45961AC22019DAF600EF5B5C;
+			remoteInfo = Domain;
 		};
 		45961ACD2019DAF600EF5B5C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -160,6 +171,10 @@
 		45145564201A0DE000939DC0 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		45145568201A11C800939DC0 /* PostsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsStore.swift; sourceTree = "<group>"; };
 		4514556B201A12F300939DC0 /* FetchPostsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPostsResponse.swift; sourceTree = "<group>"; };
+		45145570201A147400939DC0 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		45145574201A1B9900939DC0 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		45145577201A1DFC00939DC0 /* DataToDomainMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataToDomainMapper.swift; sourceTree = "<group>"; };
+		45145579201A1E4700939DC0 /* PostEntity+Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostEntity+Mapper.swift"; sourceTree = "<group>"; };
 		45257CF6E9A8A65A7A9E2700 /* Pods-CleanSwiftApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CleanSwiftApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-CleanSwiftApp/Pods-CleanSwiftApp.release.xcconfig"; sourceTree = "<group>"; };
 		4532F0222019D804003BB701 /* CleanSwiftApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanSwiftApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4532F0252019D804003BB701 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -394,6 +409,24 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
+		4514556E201A145A00939DC0 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				4514556F201A147400939DC0 /* Model.xcdatamodeld */,
+				45145574201A1B9900939DC0 /* CoreDataStack.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		45145576201A1DDC00939DC0 /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				45145577201A1DFC00939DC0 /* DataToDomainMapper.swift */,
+				45145579201A1E4700939DC0 /* PostEntity+Mapper.swift */,
+			);
+			path = Mapper;
+			sourceTree = "<group>";
+		};
 		4532F0192019D804003BB701 = {
 			isa = PBXGroup;
 			children = (
@@ -476,8 +509,10 @@
 		45961AE72019DB0200EF5B5C /* data */ = {
 			isa = PBXGroup;
 			children = (
+				45145576201A1DDC00939DC0 /* Mapper */,
 				4514556D201A13AA00939DC0 /* Entities */,
 				45145566201A117B00939DC0 /* Repositories */,
+				4514556E201A145A00939DC0 /* Local */,
 				45145561201A0DB200939DC0 /* Remote */,
 				45961AE82019DB0200EF5B5C /* data.h */,
 				45961AE92019DB0200EF5B5C /* Info.plist */,
@@ -555,6 +590,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				45145573201A177700939DC0 /* PBXTargetDependency */,
 			);
 			name = Presentation;
 			productName = Presentation;
@@ -992,11 +1028,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45145575201A1B9900939DC0 /* CoreDataStack.swift in Sources */,
 				45145565201A0DE000939DC0 /* Route.swift in Sources */,
 				45145569201A11C800939DC0 /* PostsStore.swift in Sources */,
+				4514557A201A1E4700939DC0 /* PostEntity+Mapper.swift in Sources */,
 				45145563201A0DC900939DC0 /* NetworkService.swift in Sources */,
 				4514556C201A12F300939DC0 /* FetchPostsResponse.swift in Sources */,
+				45145578201A1DFC00939DC0 /* DataToDomainMapper.swift in Sources */,
 				4514552C2019EF3600939DC0 /* PostsRepository.swift in Sources */,
+				45145571201A147400939DC0 /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1025,6 +1065,11 @@
 			isa = PBXTargetDependency;
 			target = 451455312019F0D400939DC0 /* Presentation */;
 			targetProxy = 451455452019F0D500939DC0 /* PBXContainerItemProxy */;
+		};
+		45145573201A177700939DC0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 45961AC22019DAF600EF5B5C /* Domain */;
+			targetProxy = 45145572201A177700939DC0 /* PBXContainerItemProxy */;
 		};
 		45961ACE2019DAF600EF5B5C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1542,6 +1587,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4514556F201A147400939DC0 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				45145570201A147400939DC0 /* Model.xcdatamodel */,
+			);
+			currentVersion = 45145570201A147400939DC0 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4532F01A2019D804003BB701 /* Project object */;
 }

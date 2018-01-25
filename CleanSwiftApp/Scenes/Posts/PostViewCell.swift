@@ -9,14 +9,13 @@
 import UIKit
 import Presentation
 
-class PostViewCell: BaseViewCell<Presentation.Post> {
-
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
+class PostViewCell: BaseViewCell {
     
-    override func configureCell(item: Post) {
-        titleLabel.text = item.title
-        descriptionLabel.text = item.description
-    }
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var bodyLabel: UILabel!
 
+    func configureCell(_ item: Presentation.Post) {
+        titleLabel.text = item.title
+        bodyLabel.text = item.description
+    }
 }

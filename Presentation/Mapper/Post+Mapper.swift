@@ -13,7 +13,6 @@ extension Post: PresentationToDomainMapper {
     public static func map(from domain: Domain.Post) -> Post {
         return Post(id: domain.id,
                     title: domain.title,
-                    description: domain.description,
-                    userAvatar: domain.user.avatar)
+                    description: domain.description)
     }
 }

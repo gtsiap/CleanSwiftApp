@@ -17,10 +17,14 @@ class PostsViewController: BaseViewController<PostsViewModel> {
         return RxTableViewSectionedReloadDataSource<PostsSection>(configureCell:
         { (_, tableView, indexPath, item) -> UITableViewCell in
             let cell = tableView.dequeueReusableCell(PostViewCell.self, for: indexPath)
-            cell.item = item
+            cell.configureCell(item)
             return cell
         })
     }()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
 
     override func bindViewModel() {
         let output = viewModel.transform(input: PostsViewModel.Input())
@@ -28,7 +32,6 @@ class PostsViewController: BaseViewController<PostsViewModel> {
         output
             .posts
             .asObservable()
-            .debug()
             .bind(to: tableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
     }

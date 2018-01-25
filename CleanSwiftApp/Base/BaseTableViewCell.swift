@@ -8,15 +8,4 @@
 
 import UIKit
 
-class BaseViewCell<Item>: UITableViewCell {
-
-    var item: Item! {
-        didSet {
-            configureCell(item: item)
-        }
-    }
-
-    func configureCell(item: Item) {
-
-    }
-}
+class BaseViewCell: UITableViewCell {}

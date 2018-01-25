@@ -8,12 +8,30 @@
 
 import RxSwift
 
-protocol PostsStore {
-    func fetchPosts() -> Observable<Void>
+public protocol PostsStore {
+    func fetchPosts() -> Observable<[PostEntity]>
 }
 
-struct RemotePostsStore {
-    func fetchPosts() -> Observable<FetchPostsResponse> {
-        return NetworkService.codable(route: .fetchPosts)
+public struct RemotePostsStore: PostsStore {
+    private let coreDataStack: CoreDataStack
+    public init(coreDataStack: CoreDataStack) {
+        self.coreDataStack = coreDataStack
+    }
+
+    public func fetchPosts() ->  Observable<[PostEntity]> {
+        return NetworkService
+            .codable(route: .fetchPosts)
+            .map(responseToEntities)
+    }
+
+    private func responseToEntities(response: [FetchPostsResponse]) -> [PostEntity] {
+        return response.flatMap { (post) -> PostEntity in
+
+            let entity = PostEntity(context:  self.coreDataStack.persistentContainer.viewContext)
+            entity.id = Int16(Int32(post.id))
+            entity.title = post.title
+            entity.desc = post.body
+            return entity
+        }
     }
 }
