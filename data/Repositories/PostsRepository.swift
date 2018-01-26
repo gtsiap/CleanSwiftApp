@@ -11,11 +11,24 @@ import RxSwift
 
 public class PostsRepository: Domain.PostsRepository {
     private let remoteStore: PostsStore
-    public init(remoteStore: PostsStore) {
+    private let localStore: PostsStore
+
+    public init(remoteStore: PostsStore, localStore: PostsStore) {
         self.remoteStore = remoteStore
+        self.localStore = localStore
     }
 
     public func fetchPosts() -> Observable<[Post]> {
-        return remoteStore.fetchPosts().map(PostEntity.map)
+        let fetchPostsFromRemoteAndStoreΤoLocal: Observable<Void> = remoteStore
+            .fetchPosts()
+            .flatMap(localStore.createPosts)
+
+        let posts: Observable<[PostEntity]> = fetchPostsFromRemoteAndStoreΤoLocal
+            .flatMap({
+
+                return self.localStore.fetchPosts()
+            })
+
+            return posts.map(PostEntity.map)
     }
 }

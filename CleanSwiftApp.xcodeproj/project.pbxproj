@@ -34,6 +34,7 @@
 		45145575201A1B9900939DC0 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45145574201A1B9900939DC0 /* CoreDataStack.swift */; };
 		45145578201A1DFC00939DC0 /* DataToDomainMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45145577201A1DFC00939DC0 /* DataToDomainMapper.swift */; };
 		4514557A201A1E4700939DC0 /* PostEntity+Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45145579201A1E4700939DC0 /* PostEntity+Mapper.swift */; };
+		4514557C201A390800939DC0 /* NSManagedObjectContext+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4514557B201A390800939DC0 /* NSManagedObjectContext+Extensions.swift */; };
 		4532F0262019D804003BB701 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4532F0252019D804003BB701 /* AppDelegate.swift */; };
 		4532F02B2019D804003BB701 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4532F0292019D804003BB701 /* Main.storyboard */; };
 		4532F02D2019D804003BB701 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4532F02C2019D804003BB701 /* Assets.xcassets */; };
@@ -175,6 +176,7 @@
 		45145574201A1B9900939DC0 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		45145577201A1DFC00939DC0 /* DataToDomainMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataToDomainMapper.swift; sourceTree = "<group>"; };
 		45145579201A1E4700939DC0 /* PostEntity+Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostEntity+Mapper.swift"; sourceTree = "<group>"; };
+		4514557B201A390800939DC0 /* NSManagedObjectContext+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Extensions.swift"; sourceTree = "<group>"; };
 		45257CF6E9A8A65A7A9E2700 /* Pods-CleanSwiftApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CleanSwiftApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-CleanSwiftApp/Pods-CleanSwiftApp.release.xcconfig"; sourceTree = "<group>"; };
 		4532F0222019D804003BB701 /* CleanSwiftApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanSwiftApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4532F0252019D804003BB701 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -414,6 +416,7 @@
 			children = (
 				4514556F201A147400939DC0 /* Model.xcdatamodeld */,
 				45145574201A1B9900939DC0 /* CoreDataStack.swift */,
+				4514557B201A390800939DC0 /* NSManagedObjectContext+Extensions.swift */,
 			);
 			path = Local;
 			sourceTree = "<group>";
@@ -1028,6 +1031,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4514557C201A390800939DC0 /* NSManagedObjectContext+Extensions.swift in Sources */,
 				45145575201A1B9900939DC0 /* CoreDataStack.swift in Sources */,
 				45145565201A0DE000939DC0 /* Route.swift in Sources */,
 				45145569201A11C800939DC0 /* PostsStore.swift in Sources */,
