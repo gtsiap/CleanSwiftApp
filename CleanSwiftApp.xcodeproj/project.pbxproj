@@ -49,6 +49,9 @@
 		45961AF82019DB0200EF5B5C /* data.h in Headers */ = {isa = PBXBuildFile; fileRef = 45961AE82019DB0200EF5B5C /* data.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		45961AFB2019DB0200EF5B5C /* data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45961AE62019DB0200EF5B5C /* data.framework */; };
 		45961AFC2019DB0200EF5B5C /* data.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 45961AE62019DB0200EF5B5C /* data.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		459E6337201C79A60097528A /* FetchableRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459E6336201C79A60097528A /* FetchableRepository.swift */; };
+		459E6339201C7A450097528A /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459E6338201C7A450097528A /* Store.swift */; };
+		459E633D201CA4150097528A /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459E633C201CA4150097528A /* Bar.swift */; };
 		45F6213F2019DF0C0006BC37 /* Posts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45F6213D2019DF0C0006BC37 /* Posts.storyboard */; };
 		45F621432019E0AB0006BC37 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F621422019E0AB0006BC37 /* PostsViewController.swift */; };
 		45F621452019E1910006BC37 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F621442019E1910006BC37 /* TabBarController.swift */; };
@@ -128,6 +131,13 @@
 			remoteGlobalIDString = 45961AE52019DB0200EF5B5C;
 			remoteInfo = Data;
 		};
+		459E633A201C84000097528A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4532F01A2019D804003BB701 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 45961AC22019DAF600EF5B5C;
+			remoteInfo = Domain;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -197,6 +207,9 @@
 		45961AEE2019DB0200EF5B5C /* DataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		45961AF52019DB0200EF5B5C /* DataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTests.swift; sourceTree = "<group>"; };
 		45961AF72019DB0200EF5B5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		459E6336201C79A60097528A /* FetchableRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchableRepository.swift; sourceTree = "<group>"; };
+		459E6338201C7A450097528A /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		459E633C201CA4150097528A /* Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bar.swift; sourceTree = "<group>"; };
 		45F6213E2019DF0C0006BC37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Posts.storyboard; sourceTree = "<group>"; };
 		45F621422019E0AB0006BC37 /* PostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
 		45F621442019E1910006BC37 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -294,6 +307,7 @@
 			children = (
 				451455192019E7CB00939DC0 /* Post.swift */,
 				4514551B2019E84F00939DC0 /* User.swift */,
+				459E633C201CA4150097528A /* Bar.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -384,6 +398,7 @@
 			children = (
 				45145567201A11A100939DC0 /* Stores */,
 				4514552B2019EF3600939DC0 /* PostsRepository.swift */,
+				459E6336201C79A60097528A /* FetchableRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -392,6 +407,7 @@
 			isa = PBXGroup;
 			children = (
 				45145568201A11C800939DC0 /* PostsStore.swift */,
+				459E6338201C7A450097528A /* Store.swift */,
 			);
 			path = Stores;
 			sourceTree = "<group>";
@@ -696,6 +712,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				459E633B201C84000097528A /* PBXTargetDependency */,
 			);
 			name = data;
 			productName = Data;
@@ -1016,6 +1033,7 @@
 				4514551C2019E84F00939DC0 /* User.swift in Sources */,
 				451455222019E8E000939DC0 /* FetchPostsUseCase.swift in Sources */,
 				4514551A2019E7CB00939DC0 /* Post.swift in Sources */,
+				459E633D201CA4150097528A /* Bar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1034,11 +1052,13 @@
 				4514557C201A390800939DC0 /* NSManagedObjectContext+Extensions.swift in Sources */,
 				45145575201A1B9900939DC0 /* CoreDataStack.swift in Sources */,
 				45145565201A0DE000939DC0 /* Route.swift in Sources */,
+				459E6339201C7A450097528A /* Store.swift in Sources */,
 				45145569201A11C800939DC0 /* PostsStore.swift in Sources */,
 				4514557A201A1E4700939DC0 /* PostEntity+Mapper.swift in Sources */,
 				45145563201A0DC900939DC0 /* NetworkService.swift in Sources */,
 				4514556C201A12F300939DC0 /* FetchPostsResponse.swift in Sources */,
 				45145578201A1DFC00939DC0 /* DataToDomainMapper.swift in Sources */,
+				459E6337201C79A60097528A /* FetchableRepository.swift in Sources */,
 				4514552C2019EF3600939DC0 /* PostsRepository.swift in Sources */,
 				45145571201A147400939DC0 /* Model.xcdatamodeld in Sources */,
 			);
@@ -1104,6 +1124,11 @@
 			isa = PBXTargetDependency;
 			target = 45961AE52019DB0200EF5B5C /* data */;
 			targetProxy = 45961AF92019DB0200EF5B5C /* PBXContainerItemProxy */;
+		};
+		459E633B201C84000097528A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 45961AC22019DAF600EF5B5C /* Domain */;
+			targetProxy = 459E633A201C84000097528A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

@@ -8,27 +8,23 @@
 
 import Domain
 import RxSwift
+import CoreData
 
-public class PostsRepository: Domain.PostsRepository {
-    private let remoteStore: PostsStore
-    private let localStore: PostsStore
+public class PostsRepository<R: PostsStore, L: PostsStore>
+    : FetchableRepository
+    , Domain.PostsRepository
+{
+    typealias RemoteStore = R
+    typealias LocalStore = L
+    typealias Entity = PostEntity
+    typealias DomainModel = Domain.Post
 
-    public init(remoteStore: PostsStore, localStore: PostsStore) {
+    public let remoteStore: R
+    public let localStore: L
+
+    public init(remoteStore: R, localStore: L) {
         self.remoteStore = remoteStore
         self.localStore = localStore
     }
-
-    public func fetchPosts() -> Observable<[Post]> {
-        let fetchPostsFromRemoteAndStoreΤoLocal: Observable<Void> = remoteStore
-            .fetchPosts()
-            .flatMap(localStore.createPosts)
-
-        let posts: Observable<[PostEntity]> = fetchPostsFromRemoteAndStoreΤoLocal
-            .flatMap({
-
-                return self.localStore.fetchPosts()
-            })
-
-            return posts.map(PostEntity.map)
-    }
 }
+

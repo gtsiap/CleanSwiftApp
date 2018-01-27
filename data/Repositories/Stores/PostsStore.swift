@@ -8,11 +8,9 @@
 
 import RxSwift
 import CoreData
+import Domain
 
-public protocol PostsStore {
-    func fetchPosts() -> Observable<[PostEntity]>
-    func createPosts(postEntities: [PostEntity]) -> Single<Void>
-}
+public protocol PostsStore: Store where Entity == PostEntity {}
 
 public class RemotePostsStore: PostsStore {
     private let coreDataStack: CoreDataStack
@@ -20,7 +18,7 @@ public class RemotePostsStore: PostsStore {
         self.coreDataStack = coreDataStack
     }
 
-    public func fetchPosts() ->  Observable<[PostEntity]> {
+    public func fetch() ->  Observable<[PostEntity]> {
         return NetworkService
             .codable(route: .fetchPosts)
             .map(responseToEntities)
@@ -28,7 +26,8 @@ public class RemotePostsStore: PostsStore {
 
     private func responseToEntities(response: [FetchPostsResponse]) -> [PostEntity] {
         return response.flatMap { (post) -> PostEntity in
-            let entity = PostEntity(context:  self.coreDataStack.backgroundContext)
+
+            let entity = PostEntity(context: self.coreDataStack.backgroundContext)
             entity.id = Int16(Int32(post.id))
             entity.title = post.title
             entity.desc = post.body
@@ -36,11 +35,10 @@ public class RemotePostsStore: PostsStore {
         }
     }
 
-    public func createPosts(postEntities: [PostEntity]) -> Single<Void> {
+    public func create(entities: [PostEntity]) -> Single<Void> {
         return Single.just(())
     }
 }
-
 
 public class LocalPostsStore: PostsStore {
     private let coreDataStack: CoreDataStack
@@ -48,16 +46,16 @@ public class LocalPostsStore: PostsStore {
         self.coreDataStack = coreDataStack
     }
 
-    public func fetchPosts() ->  Observable<[PostEntity]> {
+    public func fetch() ->  Observable<[PostEntity]> {
         return Observable.deferred({ [unowned self] in
             let result = try self.coreDataStack.mainContext.fetchObjects(PostEntity.self)
             return Observable.just(result)
         })
     }
 
-    public func createPosts(postEntities: [PostEntity]) -> Single<Void> {
+    public func create(entities: [PostEntity]) -> Single<Void> {
         return Single.just(coreDataStack.backgroundContext).map({ moc in
-            postEntities.forEach({
+            entities.forEach({
                moc.insert($0)
             })
             try moc.save()

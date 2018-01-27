@@ -6,17 +6,16 @@
 //  Copyright © 2018 Giorgos Tsiapaliokas. All rights reserved.
 //
 
-import Foundation
-
-protocol DataToDomainMapper {
-    associatedtype DataModel
+protocol DataToDomainMappable {
     associatedtype DomainModel
 
-    static func map(from data: DataModel) -> DomainModel
+    func mapToDomain() -> DomainModel
 }
 
-extension DataToDomainMapper {
-    static func map(from data: [DataModel]) -> [DomainModel] {
-        return data.map(Self.map)
+extension Sequence where Iterator.Element: DataToDomainMappable {
+    func mapToDomain() -> [Element.DomainModel] {
+        return map { (element) -> Element.DomainModel in
+            return element.mapToDomain()
+        }
     }
 }

@@ -9,12 +9,15 @@
 import UIKit
 import Domain
 import data
+import Domain
 
 class TabBarController: UITabBarController {
     private var coreDataStack = CoreDataStack.shared
 
-    private lazy var postsRepository = data.PostsRepository(remoteStore: RemotePostsStore(coreDataStack: coreDataStack),
-                                                            localStore: LocalPostsStore(coreDataStack: coreDataStack))
+    private lazy var postsRepository: Domain.PostsRepository =
+        data.PostsRepository(remoteStore:  RemotePostsStore(coreDataStack: coreDataStack),
+                             localStore: LocalPostsStore(coreDataStack: coreDataStack))
+
     private lazy var fetchPosts = FetchPostsUseCase(postsRepository: postsRepository)
 
     override func viewDidLoad() {

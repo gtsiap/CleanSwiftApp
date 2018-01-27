@@ -9,12 +9,11 @@
 import Foundation
 import Domain
 
-extension PostEntity: DataToDomainMapper {
-    static func map(from data: PostEntity) -> Post {
-
-        return Post(id: Int(data.id),
-                    title: data.title!,
-                    description: data.desc!,
-                    userId: Int(data.userId))
+extension PostEntity: DataToDomainMappable {
+    public func mapToDomain() -> Post {
+        return Post(id: Int(id),
+                    title: title!,
+                    description: desc!,
+                    userId: Int(userId))
     }
 }

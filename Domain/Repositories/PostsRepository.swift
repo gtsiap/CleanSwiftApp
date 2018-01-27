@@ -8,6 +8,7 @@
 
 import RxSwift
 
-public protocol PostsRepository {
-    func fetchPosts() -> Observable<[Post]>
+public protocol PostsRepository: class {
+    func fetch() -> Observable<[Post]>
 }
+

@@ -9,6 +9,8 @@
 import RxSwift
 
 public class FetchPostsUseCase: SingleUseCase {
+    private let scheduler = ConcurrentDispatchQueueScheduler(qos: DispatchQoS(qosClass: DispatchQoS.QoSClass.background, relativePriority: 1))
+
     private let postsRepository: PostsRepository
 
     public init(postsRepository: PostsRepository) {
@@ -16,6 +18,6 @@ public class FetchPostsUseCase: SingleUseCase {
     }
 
     public func execute() -> Single<[Post]> {
-        return postsRepository.fetchPosts().asSingle()
+        return postsRepository.fetch().asSingle().subscribeOn(scheduler)
     }
 }
