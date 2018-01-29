@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         #if DEBUG
         let _ = Observable<Int>
-            .timer(2, scheduler: MainScheduler.asyncInstance)
+            .interval(2, scheduler: MainScheduler.asyncInstance)
             .subscribe({ (_) -> Void in
                 print("RxSwift Resources: \(Resources.total)")
             })
