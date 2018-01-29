@@ -19,9 +19,9 @@
 		451455442019F0D500939DC0 /* Presentation.h in Headers */ = {isa = PBXBuildFile; fileRef = 451455342019F0D400939DC0 /* Presentation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		451455472019F0D500939DC0 /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 451455322019F0D400939DC0 /* Presentation.framework */; };
 		451455482019F0D500939DC0 /* Presentation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 451455322019F0D400939DC0 /* Presentation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		451455522019F10A00939DC0 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451455512019F10A00939DC0 /* Mapper.swift */; };
+		451455522019F10A00939DC0 /* DomainToPresentationMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451455512019F10A00939DC0 /* DomainToPresentationMappable.swift */; };
 		451455542019F11F00939DC0 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451455532019F11F00939DC0 /* Post.swift */; };
-		451455562019F13900939DC0 /* Post+Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451455552019F13900939DC0 /* Post+Mapper.swift */; };
+		451455562019F13900939DC0 /* Post+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451455552019F13900939DC0 /* Post+Mappable.swift */; };
 		451455592019F55A00939DC0 /* Reuseable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451455582019F55A00939DC0 /* Reuseable.swift */; };
 		4514555B2019F61C00939DC0 /* PostViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4514555A2019F61C00939DC0 /* PostViewCell.swift */; };
 		4514555E2019F81800939DC0 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4514555D2019F81800939DC0 /* BaseViewController.swift */; };
@@ -32,8 +32,8 @@
 		4514556C201A12F300939DC0 /* FetchPostsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4514556B201A12F300939DC0 /* FetchPostsResponse.swift */; };
 		45145571201A147400939DC0 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4514556F201A147400939DC0 /* Model.xcdatamodeld */; };
 		45145575201A1B9900939DC0 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45145574201A1B9900939DC0 /* CoreDataStack.swift */; };
-		45145578201A1DFC00939DC0 /* DataToDomainMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45145577201A1DFC00939DC0 /* DataToDomainMapper.swift */; };
-		4514557A201A1E4700939DC0 /* PostEntity+Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45145579201A1E4700939DC0 /* PostEntity+Mapper.swift */; };
+		45145578201A1DFC00939DC0 /* DataToDomainMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45145577201A1DFC00939DC0 /* DataToDomainMappable.swift */; };
+		4514557A201A1E4700939DC0 /* PostEntity+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45145579201A1E4700939DC0 /* PostEntity+Mappable.swift */; };
 		4514557C201A390800939DC0 /* NSManagedObjectContext+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4514557B201A390800939DC0 /* NSManagedObjectContext+Extensions.swift */; };
 		4532F0262019D804003BB701 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4532F0252019D804003BB701 /* AppDelegate.swift */; };
 		4532F02B2019D804003BB701 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4532F0292019D804003BB701 /* Main.storyboard */; };
@@ -51,7 +51,6 @@
 		45961AFC2019DB0200EF5B5C /* data.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 45961AE62019DB0200EF5B5C /* data.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		459E6337201C79A60097528A /* FetchableRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459E6336201C79A60097528A /* FetchableRepository.swift */; };
 		459E6339201C7A450097528A /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459E6338201C7A450097528A /* Store.swift */; };
-		459E633D201CA4150097528A /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459E633C201CA4150097528A /* Bar.swift */; };
 		45F6213F2019DF0C0006BC37 /* Posts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45F6213D2019DF0C0006BC37 /* Posts.storyboard */; };
 		45F621432019E0AB0006BC37 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F621422019E0AB0006BC37 /* PostsViewController.swift */; };
 		45F621452019E1910006BC37 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F621442019E1910006BC37 /* TabBarController.swift */; };
@@ -171,9 +170,9 @@
 		4514553A2019F0D400939DC0 /* PresentationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PresentationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		451455412019F0D400939DC0 /* PresentationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationTests.swift; sourceTree = "<group>"; };
 		451455432019F0D400939DC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		451455512019F10A00939DC0 /* Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
+		451455512019F10A00939DC0 /* DomainToPresentationMappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainToPresentationMappable.swift; sourceTree = "<group>"; };
 		451455532019F11F00939DC0 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
-		451455552019F13900939DC0 /* Post+Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post+Mapper.swift"; sourceTree = "<group>"; };
+		451455552019F13900939DC0 /* Post+Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post+Mappable.swift"; sourceTree = "<group>"; };
 		451455582019F55A00939DC0 /* Reuseable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reuseable.swift; sourceTree = "<group>"; };
 		4514555A2019F61C00939DC0 /* PostViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewCell.swift; sourceTree = "<group>"; };
 		4514555D2019F81800939DC0 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -184,8 +183,8 @@
 		4514556B201A12F300939DC0 /* FetchPostsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPostsResponse.swift; sourceTree = "<group>"; };
 		45145570201A147400939DC0 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		45145574201A1B9900939DC0 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
-		45145577201A1DFC00939DC0 /* DataToDomainMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataToDomainMapper.swift; sourceTree = "<group>"; };
-		45145579201A1E4700939DC0 /* PostEntity+Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostEntity+Mapper.swift"; sourceTree = "<group>"; };
+		45145577201A1DFC00939DC0 /* DataToDomainMappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataToDomainMappable.swift; sourceTree = "<group>"; };
+		45145579201A1E4700939DC0 /* PostEntity+Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostEntity+Mappable.swift"; sourceTree = "<group>"; };
 		4514557B201A390800939DC0 /* NSManagedObjectContext+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Extensions.swift"; sourceTree = "<group>"; };
 		45257CF6E9A8A65A7A9E2700 /* Pods-CleanSwiftApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CleanSwiftApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-CleanSwiftApp/Pods-CleanSwiftApp.release.xcconfig"; sourceTree = "<group>"; };
 		4532F0222019D804003BB701 /* CleanSwiftApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanSwiftApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -209,7 +208,6 @@
 		45961AF72019DB0200EF5B5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		459E6336201C79A60097528A /* FetchableRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchableRepository.swift; sourceTree = "<group>"; };
 		459E6338201C7A450097528A /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
-		459E633C201CA4150097528A /* Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bar.swift; sourceTree = "<group>"; };
 		45F6213E2019DF0C0006BC37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Posts.storyboard; sourceTree = "<group>"; };
 		45F621422019E0AB0006BC37 /* PostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
 		45F621442019E1910006BC37 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -307,7 +305,6 @@
 			children = (
 				451455192019E7CB00939DC0 /* Post.swift */,
 				4514551B2019E84F00939DC0 /* User.swift */,
-				459E633C201CA4150097528A /* Bar.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -360,8 +357,8 @@
 		451455502019F0FE00939DC0 /* Mapper */ = {
 			isa = PBXGroup;
 			children = (
-				451455512019F10A00939DC0 /* Mapper.swift */,
-				451455552019F13900939DC0 /* Post+Mapper.swift */,
+				451455512019F10A00939DC0 /* DomainToPresentationMappable.swift */,
+				451455552019F13900939DC0 /* Post+Mappable.swift */,
 			);
 			path = Mapper;
 			sourceTree = "<group>";
@@ -440,8 +437,8 @@
 		45145576201A1DDC00939DC0 /* Mapper */ = {
 			isa = PBXGroup;
 			children = (
-				45145577201A1DFC00939DC0 /* DataToDomainMapper.swift */,
-				45145579201A1E4700939DC0 /* PostEntity+Mapper.swift */,
+				45145577201A1DFC00939DC0 /* DataToDomainMappable.swift */,
+				45145579201A1E4700939DC0 /* PostEntity+Mappable.swift */,
 			);
 			path = Mapper;
 			sourceTree = "<group>";
@@ -995,8 +992,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				451455522019F10A00939DC0 /* Mapper.swift in Sources */,
-				451455562019F13900939DC0 /* Post+Mapper.swift in Sources */,
+				451455522019F10A00939DC0 /* DomainToPresentationMappable.swift in Sources */,
+				451455562019F13900939DC0 /* Post+Mappable.swift in Sources */,
 				451455542019F11F00939DC0 /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1033,7 +1030,6 @@
 				4514551C2019E84F00939DC0 /* User.swift in Sources */,
 				451455222019E8E000939DC0 /* FetchPostsUseCase.swift in Sources */,
 				4514551A2019E7CB00939DC0 /* Post.swift in Sources */,
-				459E633D201CA4150097528A /* Bar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1054,10 +1050,10 @@
 				45145565201A0DE000939DC0 /* Route.swift in Sources */,
 				459E6339201C7A450097528A /* Store.swift in Sources */,
 				45145569201A11C800939DC0 /* PostsStore.swift in Sources */,
-				4514557A201A1E4700939DC0 /* PostEntity+Mapper.swift in Sources */,
+				4514557A201A1E4700939DC0 /* PostEntity+Mappable.swift in Sources */,
 				45145563201A0DC900939DC0 /* NetworkService.swift in Sources */,
 				4514556C201A12F300939DC0 /* FetchPostsResponse.swift in Sources */,
-				45145578201A1DFC00939DC0 /* DataToDomainMapper.swift in Sources */,
+				45145578201A1DFC00939DC0 /* DataToDomainMappable.swift in Sources */,
 				459E6337201C79A60097528A /* FetchableRepository.swift in Sources */,
 				4514552C2019EF3600939DC0 /* PostsRepository.swift in Sources */,
 				45145571201A147400939DC0 /* Model.xcdatamodeld in Sources */,
