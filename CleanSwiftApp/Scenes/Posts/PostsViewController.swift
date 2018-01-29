@@ -34,5 +34,13 @@ class PostsViewController: BaseViewController<PostsViewModel> {
             .asObservable()
             .bind(to: tableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
+
+        output.error.subscribe(onNext: {
+            let alert = UIAlertController(title: "Error", message: $0.localizedDescription, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
+                alert.dismiss(animated: true)
+            }))
+            self.present(alert, animated: true)
+        }).disposed(by: disposeBag)
     }
 }

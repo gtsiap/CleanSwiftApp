@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+
+        #if DEBUG
+        let _ = Observable<Int>
+            .timer(2, scheduler: MainScheduler.asyncInstance)
+            .subscribe({ (_) -> Void in
+                print("RxSwift Resources: \(Resources.total)")
+            })
+        #endif
         return true
     }
 
