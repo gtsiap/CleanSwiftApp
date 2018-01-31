@@ -8,18 +8,19 @@
 
 import RxSwift
 
-public class FetchPostsWithUserUseCase: SingleUseCase {
-    private let scheduler = ConcurrentDispatchQueueScheduler(qos: DispatchQoS(qosClass: DispatchQoS.QoSClass.background, relativePriority: 1))
-
+public class FetchPostsWithUserUseCase: SingleUseCase<[PostWithUser]> {
     private let postsRepository: PostsRepository
     private let usersRepository: UsersRepository
 
-    public init(postsRepository: PostsRepository, usersRepository: UsersRepository) {
+    public init(postsRepository: PostsRepository,
+                usersRepository: UsersRepository,
+                scheduler: SchedulerType) {
         self.postsRepository = postsRepository
         self.usersRepository = usersRepository
+        super.init(scheduler: scheduler)
     }
 
-    public func execute() -> Single<[PostWithUser]> {
+    override func singleForUserCase() -> Single<[PostWithUser]> {
         return Single.zip(postsRepository.fetch().asSingle(),
                    usersRepository.fetch().asSingle())
         { (posts, users) -> [PostWithUser] in
@@ -29,6 +30,6 @@ public class FetchPostsWithUserUseCase: SingleUseCase {
                 }
                 return PostWithUser(post: post, user: user)
             })
-        }.subscribeOn(scheduler)
+        }
     }
 }

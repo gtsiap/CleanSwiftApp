@@ -8,8 +8,20 @@
 
 import RxSwift
 
-public protocol SingleUseCase {
-    associatedtype Result
+public class SingleUseCase<Result> {
 
-    func execute() -> Single<Result>
+    let scheduler: SchedulerType
+
+    init(scheduler: SchedulerType) {
+        self.scheduler = scheduler
+    }
+
+    public func execute() -> Single<Result> {
+        return singleForUserCase().subscribeOn(scheduler)
+    }
+
+    func singleForUserCase() -> Single<Result> {
+        fatalError("Missing Implementation")
+    }
 }
+

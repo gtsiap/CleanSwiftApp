@@ -10,9 +10,12 @@ import UIKit
 import Domain
 import data
 import Domain
+import RxSwift
 
 class TabBarController: UITabBarController {
     private var coreDataStack = CoreDataStack.shared
+    private let useCaseScheduler =  ConcurrentDispatchQueueScheduler(qos:
+        DispatchQoS(qosClass: DispatchQoS.QoSClass.background, relativePriority: 1))
 
     private lazy var postsRepository: Domain.PostsRepository =
         data.PostsRepository(remoteStore:  RemotePostsStore(coreDataStack: coreDataStack),
@@ -23,7 +26,8 @@ class TabBarController: UITabBarController {
                              localStore: LocalUsersStore(coreDataStack: coreDataStack))
 
     private lazy var fetchPosts = FetchPostsWithUserUseCase(postsRepository: postsRepository,
-                                                            usersRepository: usersRepository)
+                                                            usersRepository: usersRepository,
+                                                            scheduler: useCaseScheduler)
 
     override func viewDidLoad() {
         super.viewDidLoad()
