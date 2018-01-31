@@ -29,8 +29,14 @@ enum Route {
     }
 
     case fetchPosts
+    case fetchUsers
 
     func urlRequest() -> URLRequest {
-        return RequestFactory(path: "posts", method: .get).urlRequest()
+        switch self {
+        case .fetchPosts:
+            return RequestFactory(path: "posts", method: .get).urlRequest()
+        case .fetchUsers:
+            return RequestFactory(path: "users", method: .get).urlRequest()
+        }
     }
 }

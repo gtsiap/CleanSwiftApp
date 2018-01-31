@@ -9,4 +9,9 @@
 public struct User {
     public let id: Int
     public let avatar: URL
+
+    public init(id: Int, avatar: URL) {
+        self.id = id
+        self.avatar = avatar
+    }
 }

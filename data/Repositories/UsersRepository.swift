@@ -1,8 +1,8 @@
 //
-//  PostsRepository.swift
-//  Data
+//  UsersRepository.swift
+//  data
 //
-//  Created by Giorgos Tsiapaliokas on 25/01/2018.
+//  Created by Giorgos Tsiapaliokas on 29/01/2018.
 //  Copyright © 2018 Giorgos Tsiapaliokas. All rights reserved.
 //
 
@@ -10,14 +10,14 @@ import Domain
 import RxSwift
 import CoreData
 
-public class PostsRepository<R: PostsStore, L: PostsStore>
+public class UsersRepository<R: UsersStore, L: UsersStore>
     : FetchableRepository
-    , Domain.PostsRepository
+    , Domain.UsersRepository
 {
     typealias RemoteStore = R
     typealias LocalStore = L
-    typealias Entity = PostEntity
-    typealias DomainModel = Domain.Post
+    typealias Entity = UserEntity
+    typealias DomainModel = Domain.User
 
     public let remoteStore: R
     public let localStore: L

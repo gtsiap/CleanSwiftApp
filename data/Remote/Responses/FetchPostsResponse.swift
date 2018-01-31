@@ -9,8 +9,8 @@
 import Foundation
 
 struct FetchPostsResponse: Codable {
-        let id: Int
-        let userId: Int
-        let title: String
-        let body: String
+    let id: Int
+    let userId: Int
+    let title: String
+    let body: String
 }

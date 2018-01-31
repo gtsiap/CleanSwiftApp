@@ -39,6 +39,11 @@
 		4532F02B2019D804003BB701 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4532F0292019D804003BB701 /* Main.storyboard */; };
 		4532F02D2019D804003BB701 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4532F02C2019D804003BB701 /* Assets.xcassets */; };
 		4532F0302019D804003BB701 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4532F02E2019D804003BB701 /* LaunchScreen.storyboard */; };
+		45881073201F78E000DF30FB /* UsersStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45881072201F78E000DF30FB /* UsersStore.swift */; };
+		45881075201F79DB00DF30FB /* FetchUsersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45881074201F79DB00DF30FB /* FetchUsersResponse.swift */; };
+		45881077201F7AB100DF30FB /* UsersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45881076201F7AB100DF30FB /* UsersRepository.swift */; };
+		45881079201F7B6700DF30FB /* UsersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45881078201F7B6700DF30FB /* UsersRepository.swift */; };
+		4588107B201F7B9900DF30FB /* UserEntity+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4588107A201F7B9900DF30FB /* UserEntity+Mappable.swift */; };
 		45961ACC2019DAF600EF5B5C /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45961AC32019DAF600EF5B5C /* Domain.framework */; };
 		45961AD32019DAF600EF5B5C /* DomainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45961AD22019DAF600EF5B5C /* DomainTests.swift */; };
 		45961AD52019DAF600EF5B5C /* Domain.h in Headers */ = {isa = PBXBuildFile; fileRef = 45961AC52019DAF600EF5B5C /* Domain.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -194,6 +199,11 @@
 		4532F02F2019D804003BB701 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4532F0312019D804003BB701 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		453E28B32019D98B00BD80F3 /* RxDataSources.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxDataSources.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		45881072201F78E000DF30FB /* UsersStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersStore.swift; sourceTree = "<group>"; };
+		45881074201F79DB00DF30FB /* FetchUsersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUsersResponse.swift; sourceTree = "<group>"; };
+		45881076201F7AB100DF30FB /* UsersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRepository.swift; sourceTree = "<group>"; };
+		45881078201F7B6700DF30FB /* UsersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRepository.swift; sourceTree = "<group>"; };
+		4588107A201F7B9900DF30FB /* UserEntity+Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserEntity+Mappable.swift"; sourceTree = "<group>"; };
 		45961AC32019DAF600EF5B5C /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		45961AC52019DAF600EF5B5C /* Domain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Domain.h; sourceTree = "<group>"; };
 		45961AC62019DAF600EF5B5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -313,6 +323,7 @@
 			isa = PBXGroup;
 			children = (
 				4514551E2019E89400939DC0 /* PostsRepository.swift */,
+				45881078201F7B6700DF30FB /* UsersRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -395,6 +406,7 @@
 			children = (
 				45145567201A11A100939DC0 /* Stores */,
 				4514552B2019EF3600939DC0 /* PostsRepository.swift */,
+				45881076201F7AB100DF30FB /* UsersRepository.swift */,
 				459E6336201C79A60097528A /* FetchableRepository.swift */,
 			);
 			path = Repositories;
@@ -403,8 +415,9 @@
 		45145567201A11A100939DC0 /* Stores */ = {
 			isa = PBXGroup;
 			children = (
-				45145568201A11C800939DC0 /* PostsStore.swift */,
 				459E6338201C7A450097528A /* Store.swift */,
+				45145568201A11C800939DC0 /* PostsStore.swift */,
+				45881072201F78E000DF30FB /* UsersStore.swift */,
 			);
 			path = Stores;
 			sourceTree = "<group>";
@@ -413,6 +426,7 @@
 			isa = PBXGroup;
 			children = (
 				4514556B201A12F300939DC0 /* FetchPostsResponse.swift */,
+				45881074201F79DB00DF30FB /* FetchUsersResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -439,6 +453,7 @@
 			children = (
 				45145577201A1DFC00939DC0 /* DataToDomainMappable.swift */,
 				45145579201A1E4700939DC0 /* PostEntity+Mappable.swift */,
+				4588107A201F7B9900DF30FB /* UserEntity+Mappable.swift */,
 			);
 			path = Mapper;
 			sourceTree = "<group>";
@@ -1029,6 +1044,7 @@
 				4514551F2019E89400939DC0 /* PostsRepository.swift in Sources */,
 				4514551C2019E84F00939DC0 /* User.swift in Sources */,
 				451455222019E8E000939DC0 /* FetchPostsUseCase.swift in Sources */,
+				45881079201F7B6700DF30FB /* UsersRepository.swift in Sources */,
 				4514551A2019E7CB00939DC0 /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1045,17 +1061,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45881075201F79DB00DF30FB /* FetchUsersResponse.swift in Sources */,
 				4514557C201A390800939DC0 /* NSManagedObjectContext+Extensions.swift in Sources */,
 				45145575201A1B9900939DC0 /* CoreDataStack.swift in Sources */,
 				45145565201A0DE000939DC0 /* Route.swift in Sources */,
 				459E6339201C7A450097528A /* Store.swift in Sources */,
 				45145569201A11C800939DC0 /* PostsStore.swift in Sources */,
 				4514557A201A1E4700939DC0 /* PostEntity+Mappable.swift in Sources */,
+				45881073201F78E000DF30FB /* UsersStore.swift in Sources */,
 				45145563201A0DC900939DC0 /* NetworkService.swift in Sources */,
 				4514556C201A12F300939DC0 /* FetchPostsResponse.swift in Sources */,
 				45145578201A1DFC00939DC0 /* DataToDomainMappable.swift in Sources */,
 				459E6337201C79A60097528A /* FetchableRepository.swift in Sources */,
 				4514552C2019EF3600939DC0 /* PostsRepository.swift in Sources */,
+				4588107B201F7B9900DF30FB /* UserEntity+Mappable.swift in Sources */,
+				45881077201F7AB100DF30FB /* UsersRepository.swift in Sources */,
 				45145571201A147400939DC0 /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
