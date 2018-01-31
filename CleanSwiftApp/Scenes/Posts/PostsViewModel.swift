@@ -29,9 +29,9 @@ class PostsViewModel {
         let error: Observable<Error>
     }
 
-    private let fetchPosts: FetchPostsUseCase
+    private let fetchPosts: FetchPostsWithUserUseCase
 
-    init(fetchPosts: FetchPostsUseCase) {
+    init(fetchPosts: FetchPostsWithUserUseCase) {
         self.fetchPosts = fetchPosts
     }
 

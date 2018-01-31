@@ -9,10 +9,11 @@
 import Foundation
 import Domain
 
-extension Domain.Post: DomainToPresentationMappable {
+extension Domain.PostWithUser: DomainToPresentationMappable {
     public func mapToPresentation() -> Post {
-        return Post(id: id,
-                    title: title,
-                    description: description)
+        return Post(id: post.id,
+                    title: post.title,
+                    description: post.description,
+                    userAvatar: user.avatar)
     }
 }

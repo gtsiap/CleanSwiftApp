@@ -18,7 +18,12 @@ class TabBarController: UITabBarController {
         data.PostsRepository(remoteStore:  RemotePostsStore(coreDataStack: coreDataStack),
                              localStore: LocalPostsStore(coreDataStack: coreDataStack))
 
-    private lazy var fetchPosts = FetchPostsUseCase(postsRepository: postsRepository)
+    private lazy var usersRepository: Domain.UsersRepository =
+        data.UsersRepository(remoteStore: RemoteUsersStore(coreDataStack: coreDataStack),
+                             localStore: LocalUsersStore(coreDataStack: coreDataStack))
+
+    private lazy var fetchPosts = FetchPostsWithUserUseCase(postsRepository: postsRepository,
+                                                            usersRepository: usersRepository)
 
     override func viewDidLoad() {
         super.viewDidLoad()
