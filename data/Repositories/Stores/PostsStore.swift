@@ -12,15 +12,18 @@ import Domain
 
 public protocol PostsStore: Store where Entity == PostEntity {}
 
-public class RemotePostsStore: PostsStore {
+public class RemotePostsStore: PostsStore, RemoteStore {
     private let coreDataStack: CoreDataStack
-    public init(coreDataStack: CoreDataStack) {
+    private let networkService: NetworkServiceType
+    public init(coreDataStack: CoreDataStack, networkService: NetworkServiceType) {
         self.coreDataStack = coreDataStack
+        self.networkService = networkService
     }
 
     public func fetch() ->  Observable<[PostEntity]> {
-        return NetworkService
-            .codable(route: .fetchPosts)
+        return networkService
+            .fetchPosts()
+            .map(dataToCodable)
             .map(responseToEntities)
     }
 
@@ -28,9 +31,10 @@ public class RemotePostsStore: PostsStore {
         return response.flatMap { (post) -> PostEntity in
 
             let entity = PostEntity(context: self.coreDataStack.backgroundContext)
-            entity.id = Int16(Int32(post.id))
+            entity.id = Int16(post.id)
             entity.title = post.title
             entity.desc = post.body
+            entity.userId = Int16(post.userId)
             return entity
         }
     }

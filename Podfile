@@ -17,6 +17,10 @@ target 'data' do
     pod 'RxCocoa', '~> 4.0'
 end
 
+target 'dataTests' do
+    pod 'RxBlocking', '~> 4.0'
+end
+
 target 'Domain' do
 
 end

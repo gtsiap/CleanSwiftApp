@@ -14,22 +14,26 @@ import Domain
 
 public protocol UsersStore: Store where Entity == UserEntity {}
 
-public class RemoteUsersStore: UsersStore {
+public class RemoteUsersStore: UsersStore, RemoteStore {
     private let coreDataStack: CoreDataStack
-    public init(coreDataStack: CoreDataStack) {
+    private let networkService: NetworkServiceType
+
+    public init(coreDataStack: CoreDataStack, networkService: NetworkServiceType) {
         self.coreDataStack = coreDataStack
+        self.networkService = networkService
     }
 
     public func fetch() -> Observable<[UserEntity]> {
-        return NetworkService
-            .codable(route: .fetchUsers)
+        return networkService
+            .fetchUsers()
+            .map(dataToCodable)
             .map(responseToEntities)
     }
 
     private func responseToEntities(response: [FetchUsersResponse]) -> [UserEntity] {
         return response.flatMap { (user) -> UserEntity in
             let entity = UserEntity(context: self.coreDataStack.backgroundContext)
-            entity.id = Int16(Int32(user.id))
+            entity.id = Int16(user.id)
             return entity
         }
     }

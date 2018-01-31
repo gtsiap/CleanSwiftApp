@@ -13,16 +13,17 @@ import Domain
 import RxSwift
 
 class TabBarController: UITabBarController {
+    private let networkService: NetworkServiceType = NetworkService()
     private var coreDataStack = CoreDataStack.shared
     private let useCaseScheduler =  ConcurrentDispatchQueueScheduler(qos:
         DispatchQoS(qosClass: DispatchQoS.QoSClass.background, relativePriority: 1))
 
     private lazy var postsRepository: Domain.PostsRepository =
-        data.PostsRepository(remoteStore:  RemotePostsStore(coreDataStack: coreDataStack),
+        data.PostsRepository(remoteStore:  RemotePostsStore(coreDataStack: coreDataStack, networkService: networkService),
                              localStore: LocalPostsStore(coreDataStack: coreDataStack))
 
     private lazy var usersRepository: Domain.UsersRepository =
-        data.UsersRepository(remoteStore: RemoteUsersStore(coreDataStack: coreDataStack),
+        data.UsersRepository(remoteStore: RemoteUsersStore(coreDataStack: coreDataStack, networkService: networkService),
                              localStore: LocalUsersStore(coreDataStack: coreDataStack))
 
     private lazy var fetchPosts = FetchPostsWithUserUseCase(postsRepository: postsRepository,

@@ -44,8 +44,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "45961AED2019DB0200EF5B5C"
-               BuildableName = "DataTests.xctest"
-               BlueprintName = "DataTests"
+               BuildableName = "dataTests.xctest"
+               BlueprintName = "dataTests"
                ReferencedContainer = "container:CleanSwiftApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
