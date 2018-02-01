@@ -35,6 +35,7 @@
 		45145578201A1DFC00939DC0 /* DataToDomainMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45145577201A1DFC00939DC0 /* DataToDomainMappable.swift */; };
 		4514557A201A1E4700939DC0 /* PostEntity+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45145579201A1E4700939DC0 /* PostEntity+Mappable.swift */; };
 		4514557C201A390800939DC0 /* NSManagedObjectContext+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4514557B201A390800939DC0 /* NSManagedObjectContext+Extensions.swift */; };
+		451EE20E20233EFE0040A0F4 /* PostsRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451EE20D20233EFE0040A0F4 /* PostsRepositoryTests.swift */; };
 		4532F0262019D804003BB701 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4532F0252019D804003BB701 /* AppDelegate.swift */; };
 		4532F02B2019D804003BB701 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4532F0292019D804003BB701 /* Main.storyboard */; };
 		4532F02D2019D804003BB701 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4532F02C2019D804003BB701 /* Assets.xcassets */; };
@@ -196,6 +197,7 @@
 		45145577201A1DFC00939DC0 /* DataToDomainMappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataToDomainMappable.swift; sourceTree = "<group>"; };
 		45145579201A1E4700939DC0 /* PostEntity+Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostEntity+Mappable.swift"; sourceTree = "<group>"; };
 		4514557B201A390800939DC0 /* NSManagedObjectContext+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Extensions.swift"; sourceTree = "<group>"; };
+		451EE20D20233EFE0040A0F4 /* PostsRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsRepositoryTests.swift; sourceTree = "<group>"; };
 		45257CF6E9A8A65A7A9E2700 /* Pods-CleanSwiftApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CleanSwiftApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-CleanSwiftApp/Pods-CleanSwiftApp.release.xcconfig"; sourceTree = "<group>"; };
 		4532F0222019D804003BB701 /* CleanSwiftApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanSwiftApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4532F0252019D804003BB701 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -525,6 +527,7 @@
 			isa = PBXGroup;
 			children = (
 				453B7AE42021923200B72472 /* UsersRepositoryTests.swift */,
+				451EE20D20233EFE0040A0F4 /* PostsRepositoryTests.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -1175,6 +1178,7 @@
 			files = (
 				453B7AE52021923200B72472 /* UsersRepositoryTests.swift in Sources */,
 				45961AF62019DB0200EF5B5C /* DataTests.swift in Sources */,
+				451EE20E20233EFE0040A0F4 /* PostsRepositoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

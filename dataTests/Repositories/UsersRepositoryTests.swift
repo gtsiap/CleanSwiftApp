@@ -12,7 +12,7 @@ import RxBlocking
 import Domain
 @testable import data
 
-class MockedNetworkService: NetworkServiceType {
+private class MockedNetworkService: NetworkServiceType {
     func fetchUsers() -> Observable<Data> {
         let mocked = """
 [{
