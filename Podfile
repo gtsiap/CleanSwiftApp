@@ -17,12 +17,19 @@ target 'data' do
     pod 'RxCocoa', '~> 4.0'
 end
 
-target 'dataTests' do
-    pod 'RxBlocking', '~> 4.0'
-end
-
 target 'Domain' do
 
+end
+
+
+abstract_target 'Tests' do
+    pod 'RxBlocking', '~> 4.0'
+
+    target 'DomainTests' do
+    end
+
+    target 'dataTests' do
+    end
 end
 
 post_install do |installer|

@@ -6,31 +6,27 @@
 //  Copyright © 2018 Giorgos Tsiapaliokas. All rights reserved.
 //
 
+import RxSwift
+import RxBlocking
 import XCTest
 @testable import Domain
 
-class DomainTests: XCTestCase {
-    
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+class DomainTestCase: XCTestCase {
+
+    let scheduler = MainScheduler.instance
+
+    func assertObservable<E>(single: Single<E>, numberOfElements: Int) throws -> E {
+        return try assertObservable(observable: single.asObservable(), numberOfElements: numberOfElements)
     }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+
+    func assertObservable<E>(observable: Observable<E>, numberOfElements: Int) throws -> E {
+        let observableSequence = try observable.toBlocking().toArray()
+        XCTAssertEqual(observableSequence.count, numberOfElements)
+
+        let results = observableSequence.first
+        XCTAssertNotNil(results)
+
+        return results!
     }
     
 }
