@@ -12,14 +12,14 @@ import RxBlocking
 import Domain
 @testable import data
 
-private class MockedNetworkService: NetworkServiceType {
-    func fetchUsers() -> Observable<Data> {
-        let mocked = """
+private struct MockedNetworkService: NetworkServiceType {
+    func fetchUsers() -> Observable<[FetchUsersResponse]> {
+        let stub = """
 [{
     "id" : 5
 }]
 """
-        return Observable.just(mocked.data(using: .utf8)!)
+        return stubToCodable(stub: stub)
     }
 }
 

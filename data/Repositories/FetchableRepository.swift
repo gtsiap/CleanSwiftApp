@@ -26,7 +26,7 @@ protocol FetchableRepository: class {
 }
 
 extension FetchableRepository {
-    public func fetch() -> Observable<[DomainModel]> {
+    func fetch() -> Observable<[DomainModel]> {
         return remoteStore
             .fetch()
             .flatMap(localStore.create)

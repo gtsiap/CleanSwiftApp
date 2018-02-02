@@ -9,18 +9,18 @@
 import Foundation
 import CoreData
 
-public class CoreDataStack {
+class CoreDataStack {
     private let persistentContainer: NSPersistentContainer
 
-    public lazy private(set) var mainContext: NSManagedObjectContext = {
+    var mainContext: NSManagedObjectContext {
         return persistentContainer.viewContext
-    }()
+    }
 
-    public lazy private(set) var backgroundContext: NSManagedObjectContext = {
+    lazy private(set) var backgroundContext: NSManagedObjectContext = {
         return persistentContainer.newBackgroundContext()
     }()
     
-    public static let shared = CoreDataStack(isInMemory: false)
+    static let shared = CoreDataStack(isInMemory: false)
 
     init(isInMemory: Bool) {
         let bundle = Bundle(for: CoreDataStack.self)

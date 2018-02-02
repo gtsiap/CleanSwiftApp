@@ -10,20 +10,20 @@ import RxSwift
 import CoreData
 import Domain
 
-public protocol PostsStore: Store where Entity == PostEntity {}
+protocol PostsStore: Store where Entity == PostEntity {}
 
-public class RemotePostsStore: PostsStore, RemoteStore {
+final class RemotePostsStore: PostsStore {
     private let coreDataStack: CoreDataStack
     private let networkService: NetworkServiceType
-    public init(coreDataStack: CoreDataStack, networkService: NetworkServiceType) {
+
+    init(coreDataStack: CoreDataStack, networkService: NetworkServiceType) {
         self.coreDataStack = coreDataStack
         self.networkService = networkService
     }
 
-    public func fetch() ->  Observable<[PostEntity]> {
+   func fetch() ->  Observable<[PostEntity]> {
         return networkService
             .fetchPosts()
-            .map(dataToCodable)
             .map(responseToEntities)
     }
 
@@ -39,25 +39,27 @@ public class RemotePostsStore: PostsStore, RemoteStore {
         }
     }
 
-    public func create(entities: [PostEntity]) -> Single<Void> {
+    func create(entities: [PostEntity]) -> Single<Void> {
         return Single.just(())
     }
 }
 
-public class LocalPostsStore: PostsStore {
+final class LocalPostsStore: PostsStore {
+
     private let coreDataStack: CoreDataStack
-    public init(coreDataStack: CoreDataStack) {
+
+    init(coreDataStack: CoreDataStack) {
         self.coreDataStack = coreDataStack
     }
 
-    public func fetch() ->  Observable<[PostEntity]> {
+    func fetch() ->  Observable<[PostEntity]> {
         return Observable.deferred({ [unowned self] in
             let result = try self.coreDataStack.mainContext.fetchObjects(PostEntity.self)
             return Observable.just(result)
         })
     }
 
-    public func create(entities: [PostEntity]) -> Single<Void> {
+    func create(entities: [PostEntity]) -> Single<Void> {
         return Single.just(coreDataStack.backgroundContext).map({ moc in
             entities.forEach({
                moc.insert($0)

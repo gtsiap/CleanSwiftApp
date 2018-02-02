@@ -9,7 +9,7 @@
 import RxSwift
 import CoreData
 
-public protocol Store: class {
+protocol Store: class {
     associatedtype Entity
     func fetch() -> Observable<[Entity]>
     func create(entities: [Entity]) -> Single<Void>

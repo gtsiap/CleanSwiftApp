@@ -10,7 +10,7 @@ import Foundation
 import Domain
 
 extension PostEntity: DataToDomainMappable {
-    public func mapToDomain() -> Post {
+    func mapToDomain() -> Post {
         return Post(id: Int(id),
                     title: title!,
                     description: desc!,

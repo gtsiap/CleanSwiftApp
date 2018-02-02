@@ -10,7 +10,7 @@ import Foundation
 import Domain
 
 extension UserEntity: DataToDomainMappable {
-    public func mapToDomain() -> User {
+    func mapToDomain() -> User {
         return User(id: Int(id))
     }
 }

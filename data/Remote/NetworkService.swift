@@ -10,18 +10,23 @@ import Foundation
 import RxCocoa
 import RxSwift
 
-public protocol NetworkServiceType {
-    func fetchPosts() -> Observable<Data>
-    func fetchUsers() -> Observable<Data>
+protocol NetworkServiceType {
+    func fetchPosts() -> Observable<[FetchPostsResponse]>
+    func fetchUsers() -> Observable<[FetchUsersResponse]>
 }
 
 extension NetworkServiceType {
-    public func fetchPosts() -> Observable<Data> {
-        return data(route: .fetchPosts)
+    func fetchPosts() -> Observable<[FetchPostsResponse]> {
+        return codable(route: .fetchPosts)
     }
 
-    public func fetchUsers() -> Observable<Data> {
-        return data(route: .fetchUsers)
+    func fetchUsers() -> Observable<[FetchUsersResponse]> {
+        return codable(route: .fetchUsers)
+    }
+
+    private func codable<T: Codable>(route: Route) -> Observable<T>  {
+       return data(route: route)
+        .map({ return try JSONDecoder().decode(T.self, from: $0) })
     }
 
     private func data(route: Route) -> Observable<Data> {
@@ -29,6 +34,6 @@ extension NetworkServiceType {
     }
 }
 
-public struct NetworkService: NetworkServiceType {
-    public init() {}
+struct NetworkService: NetworkServiceType {
+    init() {}
 }

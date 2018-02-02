@@ -43,7 +43,9 @@
 		453B7ADF20218C4400B72472 /* PostWithUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453B7ADE20218C4400B72472 /* PostWithUser.swift */; };
 		453B7AE120218D3900B72472 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453B7AE020218D3900B72472 /* Error.swift */; };
 		453B7AE52021923200B72472 /* UsersRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453B7AE42021923200B72472 /* UsersRepositoryTests.swift */; };
-		453B7AE72021A51800B72472 /* RemoteStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453B7AE62021A51800B72472 /* RemoteStore.swift */; };
+		457EAB992024481700FD85C6 /* UsersRepositoryFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457EAB982024481700FD85C6 /* UsersRepositoryFactory.swift */; };
+		457EAB9B2024497300FD85C6 /* PostsReporitoryFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457EAB9A2024497300FD85C6 /* PostsReporitoryFactory.swift */; };
+		457EAB9D2024511400FD85C6 /* NetworkServiceType+Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457EAB9C2024511400FD85C6 /* NetworkServiceType+Test.swift */; };
 		45881073201F78E000DF30FB /* UsersStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45881072201F78E000DF30FB /* UsersStore.swift */; };
 		45881075201F79DB00DF30FB /* FetchUsersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45881074201F79DB00DF30FB /* FetchUsersResponse.swift */; };
 		45881077201F7AB100DF30FB /* UsersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45881076201F7AB100DF30FB /* UsersRepository.swift */; };
@@ -208,8 +210,10 @@
 		453B7ADE20218C4400B72472 /* PostWithUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostWithUser.swift; sourceTree = "<group>"; };
 		453B7AE020218D3900B72472 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		453B7AE42021923200B72472 /* UsersRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRepositoryTests.swift; sourceTree = "<group>"; };
-		453B7AE62021A51800B72472 /* RemoteStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteStore.swift; sourceTree = "<group>"; };
 		453E28B32019D98B00BD80F3 /* RxDataSources.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxDataSources.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		457EAB982024481700FD85C6 /* UsersRepositoryFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRepositoryFactory.swift; sourceTree = "<group>"; };
+		457EAB9A2024497300FD85C6 /* PostsReporitoryFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsReporitoryFactory.swift; sourceTree = "<group>"; };
+		457EAB9C2024511400FD85C6 /* NetworkServiceType+Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkServiceType+Test.swift"; sourceTree = "<group>"; };
 		45881072201F78E000DF30FB /* UsersStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersStore.swift; sourceTree = "<group>"; };
 		45881074201F79DB00DF30FB /* FetchUsersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUsersResponse.swift; sourceTree = "<group>"; };
 		45881076201F7AB100DF30FB /* UsersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRepository.swift; sourceTree = "<group>"; };
@@ -434,7 +438,6 @@
 			isa = PBXGroup;
 			children = (
 				459E6338201C7A450097528A /* Store.swift */,
-				453B7AE62021A51800B72472 /* RemoteStore.swift */,
 				45145568201A11C800939DC0 /* PostsStore.swift */,
 				45881072201F78E000DF30FB /* UsersStore.swift */,
 			);
@@ -545,6 +548,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		457EAB97202447FA00FD85C6 /* Repository Factories */ = {
+			isa = PBXGroup;
+			children = (
+				457EAB982024481700FD85C6 /* UsersRepositoryFactory.swift */,
+				457EAB9A2024497300FD85C6 /* PostsReporitoryFactory.swift */,
+			);
+			path = "Repository Factories";
+			sourceTree = "<group>";
+		};
 		45961AC42019DAF600EF5B5C /* Domain */ = {
 			isa = PBXGroup;
 			children = (
@@ -570,6 +582,7 @@
 		45961AE72019DB0200EF5B5C /* data */ = {
 			isa = PBXGroup;
 			children = (
+				457EAB97202447FA00FD85C6 /* Repository Factories */,
 				45145576201A1DDC00939DC0 /* Mapper */,
 				4514556D201A13AA00939DC0 /* Entities */,
 				45145566201A117B00939DC0 /* Repositories */,
@@ -587,6 +600,7 @@
 				453B7AE32021921000B72472 /* Repositories */,
 				45961AF52019DB0200EF5B5C /* DataTests.swift */,
 				45961AF72019DB0200EF5B5C /* Info.plist */,
+				457EAB9C2024511400FD85C6 /* NetworkServiceType+Test.swift */,
 			);
 			path = dataTests;
 			sourceTree = "<group>";
@@ -1163,11 +1177,12 @@
 				45145563201A0DC900939DC0 /* NetworkService.swift in Sources */,
 				4514556C201A12F300939DC0 /* FetchPostsResponse.swift in Sources */,
 				45145578201A1DFC00939DC0 /* DataToDomainMappable.swift in Sources */,
+				457EAB992024481700FD85C6 /* UsersRepositoryFactory.swift in Sources */,
 				459E6337201C79A60097528A /* FetchableRepository.swift in Sources */,
+				457EAB9B2024497300FD85C6 /* PostsReporitoryFactory.swift in Sources */,
 				4514552C2019EF3600939DC0 /* PostsRepository.swift in Sources */,
 				4588107B201F7B9900DF30FB /* UserEntity+Mappable.swift in Sources */,
 				45881077201F7AB100DF30FB /* UsersRepository.swift in Sources */,
-				453B7AE72021A51800B72472 /* RemoteStore.swift in Sources */,
 				45145571201A147400939DC0 /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1176,6 +1191,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				457EAB9D2024511400FD85C6 /* NetworkServiceType+Test.swift in Sources */,
 				453B7AE52021923200B72472 /* UsersRepositoryTests.swift in Sources */,
 				45961AF62019DB0200EF5B5C /* DataTests.swift in Sources */,
 				451EE20E20233EFE0040A0F4 /* PostsRepositoryTests.swift in Sources */,
