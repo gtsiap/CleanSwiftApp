@@ -16,7 +16,7 @@ public class SingleUseCase<Result> {
         self.scheduler = scheduler
     }
 
-    public func execute() -> Single<Result> {
+    public final func execute() -> Single<Result> {
         return singleForUserCase().subscribeOn(scheduler)
     }
 
