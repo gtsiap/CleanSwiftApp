@@ -36,11 +36,7 @@ class PostsViewController: BaseViewController<PostsViewModel> {
             .disposed(by: disposeBag)
 
         output.error.subscribe(onNext: {
-            let alert = UIAlertController(title: "Error", message: $0.localizedDescription, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
-                alert.dismiss(animated: true)
-            }))
-            self.present(alert, animated: true)
+            self.showAlert(for: $0)
         }).disposed(by: disposeBag)
     }
 }
