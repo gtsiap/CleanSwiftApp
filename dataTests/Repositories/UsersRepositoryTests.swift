@@ -16,7 +16,9 @@ private struct MockedNetworkService: NetworkServiceType {
     func fetchUsers() -> Observable<[FetchUsersResponse]> {
         let stub = """
 [{
-    "id" : 5
+    "id" : 5,
+    "name": "John",
+    "email": "Smith"
 }]
 """
         return stubToCodable(stub: stub)
@@ -38,5 +40,7 @@ class UsersRepositoryTests: DataTestCase {
         XCTAssertNotNil(user)
 
         XCTAssertEqual(user!.id, 5)
+        XCTAssertEqual(user!.name, "John")
+        XCTAssertEqual(user!.email, "Smith")
     }
 }

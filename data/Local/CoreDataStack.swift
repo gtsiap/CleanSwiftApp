@@ -31,11 +31,15 @@ class CoreDataStack {
 
         persistentContainer = NSPersistentContainer(name: "Model", managedObjectModel: model)
 
+        let description = NSPersistentStoreDescription()
+        description.shouldMigrateStoreAutomatically = true
+        description.shouldInferMappingModelAutomatically = true
+
         if isInMemory {
-            let description = NSPersistentStoreDescription()
             description.type = NSInMemoryStoreType
-            persistentContainer.persistentStoreDescriptions = [description]
         }
+
+        persistentContainer.persistentStoreDescriptions = [description]
 
         persistentContainer.loadPersistentStores() { (description, error) in
             if let error = error {

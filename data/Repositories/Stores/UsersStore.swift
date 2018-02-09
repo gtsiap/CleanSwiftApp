@@ -33,6 +33,8 @@ final class RemoteUsersStore: UsersStore {
         return response.flatMap { (user) -> UserEntity in
             let entity = UserEntity(context: self.coreDataStack.backgroundContext)
             entity.id = Int16(user.id)
+            entity.name = user.name
+            entity.email = user.email
             return entity
         }
     }

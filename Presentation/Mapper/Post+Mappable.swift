@@ -13,6 +13,8 @@ extension Domain.PostWithUser: DomainToPresentationMappable {
     public func mapToPresentation() -> Post {
         return Post(id: post.id,
                     title: post.title,
-                    description: post.description)
+                    description: post.description,
+                    userName: user.name,
+                    userEmail: user.email)
     }
 }

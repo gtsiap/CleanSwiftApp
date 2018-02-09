@@ -7,10 +7,12 @@
         <attribute name="userId" attributeType="Integer 16" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <entity name="UserEntity" representedClassName="UserEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="email" attributeType="String" syncable="YES"/>
         <attribute name="id" attributeType="Integer 16" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
         <element name="PostEntity" positionX="-63" positionY="-18" width="128" height="105"/>
-        <element name="UserEntity" positionX="-63" positionY="9" width="128" height="60"/>
+        <element name="UserEntity" positionX="-63" positionY="9" width="128" height="90"/>
     </elements>
 </model>

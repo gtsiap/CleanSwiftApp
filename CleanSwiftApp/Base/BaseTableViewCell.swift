@@ -8,4 +8,15 @@
 
 import UIKit
 
-class BaseViewCell: UITableViewCell {}
+class BaseViewCell: UITableViewCell {
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+
+        applyStyle()
+    }
+
+    func applyStyle() {
+        fatalError("Missing Implementation")
+    }
+}

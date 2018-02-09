@@ -11,6 +11,6 @@ import Domain
 
 extension UserEntity: DataToDomainMappable {
     func mapToDomain() -> User {
-        return User(id: Int(id))
+        return User(id: Int(id), name: name!, email: email!)
     }
 }

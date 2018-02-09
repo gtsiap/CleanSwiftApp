@@ -26,7 +26,7 @@ extension NetworkServiceType {
 
     private func codable<T: Codable>(route: Route) -> Observable<T>  {
        return data(route: route)
-        .map({ return try JSONDecoder().decode(T.self, from: $0) })
+            .map({ return try JSONDecoder().decode(T.self, from: $0) })
     }
 
     private func data(route: Route) -> Observable<Data> {

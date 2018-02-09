@@ -44,6 +44,9 @@
 		453B7ADF20218C4400B72472 /* PostWithUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453B7ADE20218C4400B72472 /* PostWithUser.swift */; };
 		453B7AE120218D3900B72472 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453B7AE020218D3900B72472 /* Error.swift */; };
 		453B7AE52021923200B72472 /* UsersRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453B7AE42021923200B72472 /* UsersRepositoryTests.swift */; };
+		455B2CB4202480E900A634AB /* PostsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455B2CB3202480E900A634AB /* PostsViewCell.swift */; };
+		455B2CB62024811300A634AB /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455B2CB52024811300A634AB /* Styles.swift */; };
+		455B2CB820249DE000A634AB /* AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455B2CB720249DE000A634AB /* AppStyle.swift */; };
 		457EAB992024481700FD85C6 /* UsersRepositoryFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457EAB982024481700FD85C6 /* UsersRepositoryFactory.swift */; };
 		457EAB9B2024497300FD85C6 /* PostsReporitoryFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457EAB9A2024497300FD85C6 /* PostsReporitoryFactory.swift */; };
 		457EAB9D2024511400FD85C6 /* NetworkServiceType+Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457EAB9C2024511400FD85C6 /* NetworkServiceType+Test.swift */; };
@@ -218,6 +221,9 @@
 		453B7AE020218D3900B72472 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		453B7AE42021923200B72472 /* UsersRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRepositoryTests.swift; sourceTree = "<group>"; };
 		453E28B32019D98B00BD80F3 /* RxDataSources.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxDataSources.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		455B2CB3202480E900A634AB /* PostsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewCell.swift; sourceTree = "<group>"; };
+		455B2CB52024811300A634AB /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
+		455B2CB720249DE000A634AB /* AppStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStyle.swift; sourceTree = "<group>"; };
 		457EAB982024481700FD85C6 /* UsersRepositoryFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRepositoryFactory.swift; sourceTree = "<group>"; };
 		457EAB9A2024497300FD85C6 /* PostsReporitoryFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsReporitoryFactory.swift; sourceTree = "<group>"; };
 		457EAB9C2024511400FD85C6 /* NetworkServiceType+Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkServiceType+Test.swift"; sourceTree = "<group>"; };
@@ -380,6 +386,7 @@
 		451455332019F0D400939DC0 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				455B2CB2202480BD00A634AB /* Styles */,
 				451455502019F0FE00939DC0 /* Mapper */,
 				4514554F2019F0F700939DC0 /* Models */,
 				451455342019F0D400939DC0 /* Presentation.h */,
@@ -566,6 +573,16 @@
 				4D2427DFDEEDE1DB3D50E083 /* Pods_Tests_dataTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		455B2CB2202480BD00A634AB /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				455B2CB3202480E900A634AB /* PostsViewCell.swift */,
+				455B2CB52024811300A634AB /* Styles.swift */,
+				455B2CB720249DE000A634AB /* AppStyle.swift */,
+			);
+			path = Styles;
 			sourceTree = "<group>";
 		};
 		457EAB97202447FA00FD85C6 /* Repository Factories */ = {
@@ -1189,7 +1206,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				451455522019F10A00939DC0 /* DomainToPresentationMappable.swift in Sources */,
+				455B2CB62024811300A634AB /* Styles.swift in Sources */,
 				451455562019F13900939DC0 /* Post+Mappable.swift in Sources */,
+				455B2CB820249DE000A634AB /* AppStyle.swift in Sources */,
+				455B2CB4202480E900A634AB /* PostsViewCell.swift in Sources */,
 				451455542019F11F00939DC0 /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

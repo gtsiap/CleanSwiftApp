@@ -20,7 +20,7 @@ class FetchPostsWithUserUseCaseTests: DomainTestCase {
                                    description: "description",
                                    userId: 5)]
 
-    private let validUsers = [User(id: 5)]
+    private let validUsers = [User(id: 5, name: "name", email: "email")]
 
     func testIfUserIsCorrect() throws {
 
