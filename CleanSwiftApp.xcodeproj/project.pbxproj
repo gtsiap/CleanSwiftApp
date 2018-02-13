@@ -57,6 +57,15 @@
 		45881077201F7AB100DF30FB /* UsersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45881076201F7AB100DF30FB /* UsersRepository.swift */; };
 		45881079201F7B6700DF30FB /* UsersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45881078201F7B6700DF30FB /* UsersRepository.swift */; };
 		4588107B201F7B9900DF30FB /* UserEntity+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4588107A201F7B9900DF30FB /* UserEntity+Mappable.swift */; };
+		458FBE822032FBF700139055 /* AlbumsRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458FBE812032FBF700139055 /* AlbumsRepositoryTests.swift */; };
+		458FBE842032FDB100139055 /* FetchAlbumsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458FBE832032FDB100139055 /* FetchAlbumsUseCase.swift */; };
+		458FBE862032FE5900139055 /* FetchAlbumsUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458FBE852032FE5900139055 /* FetchAlbumsUseCaseTests.swift */; };
+		4593CF68202DF19800CE2DB1 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4593CF67202DF19800CE2DB1 /* Album.swift */; };
+		4593CF6A202DF1F500CE2DB1 /* AlbumsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4593CF69202DF1F500CE2DB1 /* AlbumsRepository.swift */; };
+		4593CF6C202DF43600CE2DB1 /* FetchAlbumsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4593CF6B202DF43600CE2DB1 /* FetchAlbumsResponse.swift */; };
+		4593CF6E202DF50F00CE2DB1 /* AlbumsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4593CF6D202DF50F00CE2DB1 /* AlbumsStore.swift */; };
+		4593CF70202DF7F500CE2DB1 /* AlbumsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4593CF6F202DF7F500CE2DB1 /* AlbumsRepository.swift */; };
+		4593CF72202DF8C300CE2DB1 /* AlbumEntity+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4593CF71202DF8C300CE2DB1 /* AlbumEntity+Mappable.swift */; };
 		45961ACC2019DAF600EF5B5C /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45961AC32019DAF600EF5B5C /* Domain.framework */; };
 		45961AD32019DAF600EF5B5C /* DomainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45961AD22019DAF600EF5B5C /* DomainTests.swift */; };
 		45961AD52019DAF600EF5B5C /* Domain.h in Headers */ = {isa = PBXBuildFile; fileRef = 45961AC52019DAF600EF5B5C /* Domain.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -235,6 +244,15 @@
 		45881076201F7AB100DF30FB /* UsersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRepository.swift; sourceTree = "<group>"; };
 		45881078201F7B6700DF30FB /* UsersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRepository.swift; sourceTree = "<group>"; };
 		4588107A201F7B9900DF30FB /* UserEntity+Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserEntity+Mappable.swift"; sourceTree = "<group>"; };
+		458FBE812032FBF700139055 /* AlbumsRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsRepositoryTests.swift; sourceTree = "<group>"; };
+		458FBE832032FDB100139055 /* FetchAlbumsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchAlbumsUseCase.swift; sourceTree = "<group>"; };
+		458FBE852032FE5900139055 /* FetchAlbumsUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchAlbumsUseCaseTests.swift; sourceTree = "<group>"; };
+		4593CF67202DF19800CE2DB1 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		4593CF69202DF1F500CE2DB1 /* AlbumsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsRepository.swift; sourceTree = "<group>"; };
+		4593CF6B202DF43600CE2DB1 /* FetchAlbumsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchAlbumsResponse.swift; sourceTree = "<group>"; };
+		4593CF6D202DF50F00CE2DB1 /* AlbumsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsStore.swift; sourceTree = "<group>"; };
+		4593CF6F202DF7F500CE2DB1 /* AlbumsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsRepository.swift; sourceTree = "<group>"; };
+		4593CF71202DF8C300CE2DB1 /* AlbumEntity+Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlbumEntity+Mappable.swift"; sourceTree = "<group>"; };
 		45961AC32019DAF600EF5B5C /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		45961AC52019DAF600EF5B5C /* Domain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Domain.h; sourceTree = "<group>"; };
 		45961AC62019DAF600EF5B5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -363,6 +381,7 @@
 				451455192019E7CB00939DC0 /* Post.swift */,
 				4514551B2019E84F00939DC0 /* User.swift */,
 				453B7ADE20218C4400B72472 /* PostWithUser.swift */,
+				4593CF67202DF19800CE2DB1 /* Album.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -372,6 +391,7 @@
 			children = (
 				4514551E2019E89400939DC0 /* PostsRepository.swift */,
 				45881078201F7B6700DF30FB /* UsersRepository.swift */,
+				4593CF69202DF1F500CE2DB1 /* AlbumsRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -381,6 +401,7 @@
 			children = (
 				451455212019E8E000939DC0 /* FetchPostsWithUserUseCase.swift */,
 				451455232019E99D00939DC0 /* SingleUseCase.swift */,
+				458FBE832032FDB100139055 /* FetchAlbumsUseCase.swift */,
 			);
 			path = Usecases;
 			sourceTree = "<group>";
@@ -457,6 +478,7 @@
 				45145567201A11A100939DC0 /* Stores */,
 				4514552B2019EF3600939DC0 /* PostsRepository.swift */,
 				45881076201F7AB100DF30FB /* UsersRepository.swift */,
+				4593CF6F202DF7F500CE2DB1 /* AlbumsRepository.swift */,
 				459E6336201C79A60097528A /* FetchableRepository.swift */,
 			);
 			path = Repositories;
@@ -468,6 +490,7 @@
 				459E6338201C7A450097528A /* Store.swift */,
 				45145568201A11C800939DC0 /* PostsStore.swift */,
 				45881072201F78E000DF30FB /* UsersStore.swift */,
+				4593CF6D202DF50F00CE2DB1 /* AlbumsStore.swift */,
 			);
 			path = Stores;
 			sourceTree = "<group>";
@@ -477,6 +500,7 @@
 			children = (
 				4514556B201A12F300939DC0 /* FetchPostsResponse.swift */,
 				45881074201F79DB00DF30FB /* FetchUsersResponse.swift */,
+				4593CF6B202DF43600CE2DB1 /* FetchAlbumsResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -504,6 +528,7 @@
 				45145577201A1DFC00939DC0 /* DataToDomainMappable.swift */,
 				45145579201A1E4700939DC0 /* PostEntity+Mappable.swift */,
 				4588107A201F7B9900DF30FB /* UserEntity+Mappable.swift */,
+				4593CF71202DF8C300CE2DB1 /* AlbumEntity+Mappable.swift */,
 			);
 			path = Mapper;
 			sourceTree = "<group>";
@@ -559,6 +584,7 @@
 			children = (
 				453B7AE42021923200B72472 /* UsersRepositoryTests.swift */,
 				451EE20D20233EFE0040A0F4 /* PostsRepositoryTests.swift */,
+				458FBE812032FBF700139055 /* AlbumsRepositoryTests.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -617,6 +643,7 @@
 				45961AD42019DAF600EF5B5C /* Info.plist */,
 				457EAB9E202455D300FD85C6 /* FetchPostsWithUserUseCaseTests.swift */,
 				457EABA020246C4600FD85C6 /* MockedRepository.swift */,
+				458FBE852032FE5900139055 /* FetchAlbumsUseCaseTests.swift */,
 			);
 			path = DomainTests;
 			sourceTree = "<group>";
@@ -1256,8 +1283,11 @@
 				453B7AE120218D3900B72472 /* Error.swift in Sources */,
 				451455242019E99D00939DC0 /* SingleUseCase.swift in Sources */,
 				4514551F2019E89400939DC0 /* PostsRepository.swift in Sources */,
+				458FBE842032FDB100139055 /* FetchAlbumsUseCase.swift in Sources */,
+				4593CF6A202DF1F500CE2DB1 /* AlbumsRepository.swift in Sources */,
 				4514551C2019E84F00939DC0 /* User.swift in Sources */,
 				451455222019E8E000939DC0 /* FetchPostsWithUserUseCase.swift in Sources */,
+				4593CF68202DF19800CE2DB1 /* Album.swift in Sources */,
 				453B7ADF20218C4400B72472 /* PostWithUser.swift in Sources */,
 				45881079201F7B6700DF30FB /* UsersRepository.swift in Sources */,
 				4514551A2019E7CB00939DC0 /* Post.swift in Sources */,
@@ -1270,6 +1300,7 @@
 			files = (
 				45961AD32019DAF600EF5B5C /* DomainTests.swift in Sources */,
 				457EAB9F202455D300FD85C6 /* FetchPostsWithUserUseCaseTests.swift in Sources */,
+				458FBE862032FE5900139055 /* FetchAlbumsUseCaseTests.swift in Sources */,
 				457EABA120246C4600FD85C6 /* MockedRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1279,7 +1310,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				45881075201F79DB00DF30FB /* FetchUsersResponse.swift in Sources */,
+				4593CF6E202DF50F00CE2DB1 /* AlbumsStore.swift in Sources */,
 				4514557C201A390800939DC0 /* NSManagedObjectContext+Extensions.swift in Sources */,
+				4593CF6C202DF43600CE2DB1 /* FetchAlbumsResponse.swift in Sources */,
+				4593CF70202DF7F500CE2DB1 /* AlbumsRepository.swift in Sources */,
 				45145575201A1B9900939DC0 /* CoreDataStack.swift in Sources */,
 				45145565201A0DE000939DC0 /* Route.swift in Sources */,
 				459E6339201C7A450097528A /* Store.swift in Sources */,
@@ -1291,6 +1325,7 @@
 				45145578201A1DFC00939DC0 /* DataToDomainMappable.swift in Sources */,
 				457EAB992024481700FD85C6 /* UsersRepositoryFactory.swift in Sources */,
 				459E6337201C79A60097528A /* FetchableRepository.swift in Sources */,
+				4593CF72202DF8C300CE2DB1 /* AlbumEntity+Mappable.swift in Sources */,
 				457EAB9B2024497300FD85C6 /* PostsReporitoryFactory.swift in Sources */,
 				4514552C2019EF3600939DC0 /* PostsRepository.swift in Sources */,
 				4588107B201F7B9900DF30FB /* UserEntity+Mappable.swift in Sources */,
@@ -1305,6 +1340,7 @@
 			files = (
 				457EAB9D2024511400FD85C6 /* NetworkServiceType+Test.swift in Sources */,
 				453B7AE52021923200B72472 /* UsersRepositoryTests.swift in Sources */,
+				458FBE822032FBF700139055 /* AlbumsRepositoryTests.swift in Sources */,
 				45961AF62019DB0200EF5B5C /* DataTests.swift in Sources */,
 				451EE20E20233EFE0040A0F4 /* PostsRepositoryTests.swift in Sources */,
 			);
