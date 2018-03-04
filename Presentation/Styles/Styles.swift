@@ -40,6 +40,8 @@ struct Styles {
 
     enum View: Style {
         case layoutMargins(insets: Insets)
+        case border(width: CGFloat, color: UIColor)
+        case cornerRadius(radius: CGFloat)
 
         func apply(view: UIView) {
             switch self {
@@ -55,6 +57,11 @@ struct Styles {
                                                       bottom: insets.topAndBottom,
                                                       right: insets.leftAndRight)
                 }
+            case .border(let width, let color):
+                view.layer.borderWidth = width
+                view.layer.borderColor = color.cgColor
+            case .cornerRadius(let radius):
+                view.layer.cornerRadius = radius
             }
         }
     }

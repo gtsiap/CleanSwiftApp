@@ -9,8 +9,14 @@ inhibit_all_warnings!
 
 pod 'RxSwift', '~> 4.0'
 
-target 'CleanSwiftApp' do
+abstract_target 'Application' do
     pod 'RxDataSources', '~> 3.0'
+
+    target 'CleanSwiftApp' do
+    end
+
+    target 'Presentation' do
+    end
 end
 
 target 'data' do

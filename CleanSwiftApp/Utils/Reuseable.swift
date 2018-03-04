@@ -13,3 +13,9 @@ extension UITableView {
         return dequeueReusableCell(withIdentifier: String(describing: cellType), for: indexPath) as! T
     }
 }
+
+extension UICollectionView {
+    func dequeueReusableCell<T: UICollectionViewCell>(_ cellType: T.Type, for indexPath: IndexPath) -> T {
+        return dequeueReusableCell(withReuseIdentifier: String(describing: cellType), for: indexPath) as! T
+    }
+}

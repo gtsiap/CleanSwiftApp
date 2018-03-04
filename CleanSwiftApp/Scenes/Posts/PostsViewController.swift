@@ -22,10 +22,6 @@ class PostsViewController: BaseViewController<PostsViewModel> {
         })
     }()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
     override func bindViewModel() {
         let output = viewModel.transform(input: PostsViewModel.Input())
 

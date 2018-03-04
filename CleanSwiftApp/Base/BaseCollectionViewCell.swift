@@ -1,14 +1,15 @@
+
 //
-//  BaseTableViewCell.swift
+//  BaseCollectionViewCell.swift
 //  CleanSwiftApp
 //
-//  Created by Giorgos Tsiapaliokas on 25/01/2018.
+//  Created by Giorgos Tsiapaliokas on 15/02/2018.
 //  Copyright © 2018 Giorgos Tsiapaliokas. All rights reserved.
 //
 
 import UIKit
 
-class BaseTableViewCell: UITableViewCell {
+class BaseCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
