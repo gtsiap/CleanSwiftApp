@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XZi-eu-bJA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XZi-eu-bJA">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -26,17 +27,17 @@
                                     <constraint firstAttribute="height" constant="100" id="C0A-Od-vpF"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2l8-b6-zif">
-                                    <size key="itemSize" width="78" height="100"/>
+                                    <size key="itemSize" width="116" height="100"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AlbumViewCell" id="eG5-c5-bUG" customClass="AlbumViewCell" customModule="CleanSwiftApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="78" height="100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="116" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="78" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="116" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P3l-If-Chr" userLabel="ContainerView">
@@ -75,18 +76,64 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jsD-T1-fII" userLabel="Photos Collection View">
+                                <rect key="frame" x="0.0" y="120" width="375" height="547"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="KeA-qs-Ane">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoViewCell" id="kq3-JJ-mfF" userLabel="PhotoViewCell" customClass="PhotoViewCell" customModule="CleanSwiftApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cXs-YQ-9Mn" userLabel="photoView">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" secondItem="cXs-YQ-9Mn" secondAttribute="width" id="4M8-fo-5kQ" userLabel="width == height"/>
+                                                        <constraint firstAttribute="width" priority="999" id="Lp1-kR-Far"/>
+                                                    </constraints>
+                                                    <viewLayoutGuide key="safeArea" id="jjh-dX-uy4"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="cXs-YQ-9Mn" secondAttribute="trailing" id="BwG-fP-j1m"/>
+                                            <constraint firstItem="cXs-YQ-9Mn" firstAttribute="top" secondItem="kq3-JJ-mfF" secondAttribute="top" id="Gl3-x4-9Ex"/>
+                                            <constraint firstAttribute="bottom" secondItem="cXs-YQ-9Mn" secondAttribute="bottom" id="Tjq-cw-DNo"/>
+                                            <constraint firstItem="cXs-YQ-9Mn" firstAttribute="leading" secondItem="kq3-JJ-mfF" secondAttribute="leading" id="Z0f-D3-nmS"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="photoView" destination="cXs-YQ-9Mn" id="B0S-JG-53b"/>
+                                            <outlet property="widthConstraint" destination="Lp1-kR-Far" id="lPG-ex-Lq6"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="vEx-Pw-v2e" firstAttribute="leading" secondItem="2tT-nb-u0L" secondAttribute="leading" id="Ael-5P-VcY"/>
+                            <constraint firstItem="jsD-T1-fII" firstAttribute="leading" secondItem="2tT-nb-u0L" secondAttribute="leading" id="F4p-0x-yAR"/>
                             <constraint firstItem="vEx-Pw-v2e" firstAttribute="top" secondItem="pAh-Xl-iVS" secondAttribute="topMargin" id="TOM-il-nQ8"/>
                             <constraint firstItem="vEx-Pw-v2e" firstAttribute="trailing" secondItem="2tT-nb-u0L" secondAttribute="trailing" id="Tdp-bG-y30"/>
+                            <constraint firstItem="jsD-T1-fII" firstAttribute="trailing" secondItem="2tT-nb-u0L" secondAttribute="trailing" id="ajR-ct-js8"/>
+                            <constraint firstItem="jsD-T1-fII" firstAttribute="bottom" secondItem="2tT-nb-u0L" secondAttribute="bottom" id="ftV-B4-IQd"/>
+                            <constraint firstItem="jsD-T1-fII" firstAttribute="top" secondItem="vEx-Pw-v2e" secondAttribute="bottom" id="mrZ-45-4e1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2tT-nb-u0L"/>
                     </view>
                     <connections>
                         <outlet property="albumsCollectionView" destination="vEx-Pw-v2e" id="kH5-xf-v7k"/>
                         <outlet property="albumsCollectionViewLayout" destination="2l8-b6-zif" id="00A-yI-oUX"/>
+                        <outlet property="photosCollectionView" destination="jsD-T1-fII" id="Jr0-wd-5XH"/>
+                        <outlet property="photosCollectionViewLayout" destination="KeA-qs-Ane" id="lbJ-al-EGw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z0P-5S-0Lc" userLabel="First Responder" sceneMemberID="firstResponder"/>

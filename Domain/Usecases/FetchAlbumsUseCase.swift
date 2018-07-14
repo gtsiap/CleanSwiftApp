@@ -7,7 +7,6 @@
 //
 
 import Foundation
-
 import RxSwift
 
 public class FetchAlbumsUseCase: SingleUseCase<[Album]> {

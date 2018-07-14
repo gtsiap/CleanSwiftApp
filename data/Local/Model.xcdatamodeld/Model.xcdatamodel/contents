@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="17D47" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14135" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="AlbumEntity" representedClassName="AlbumEntity" syncable="YES" codeGenerationType="class">
         <attribute name="id" attributeType="Integer 16" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="title" attributeType="String" syncable="YES"/>
         <attribute name="userId" attributeType="Integer 16" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <entity name="PhotoEntity" representedClassName="PhotoEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="albumId" attributeType="Integer 16" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="id" attributeType="Integer 16" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="thumbnailUrl" attributeType="URI" syncable="YES"/>
     </entity>
     <entity name="PostEntity" representedClassName="PostEntity" syncable="YES" codeGenerationType="class">
         <attribute name="desc" attributeType="String" syncable="YES"/>
@@ -17,8 +22,9 @@
         <attribute name="name" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="PostEntity" positionX="-63" positionY="-18" width="128" height="105"/>
-        <element name="UserEntity" positionX="-63" positionY="9" width="128" height="90"/>
         <element name="AlbumEntity" positionX="-63" positionY="18" width="128" height="90"/>
+        <element name="PhotoEntity" positionX="-207" positionY="252" width="128" height="90"/>
+        <element name="PostEntity" positionX="-72" positionY="-216" width="128" height="105"/>
+        <element name="UserEntity" positionX="-261" positionY="-117" width="128" height="90"/>
     </elements>
 </model>

@@ -11,6 +11,7 @@ pod 'RxSwift', '~> 4.0'
 
 abstract_target 'Application' do
     pod 'RxDataSources', '~> 3.0'
+    pod 'Kingfisher', '~> 4.8'
 
     target 'CleanSwiftApp' do
     end

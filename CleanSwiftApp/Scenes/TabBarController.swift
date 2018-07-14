@@ -24,8 +24,15 @@ class TabBarController: UITabBarController {
                                                             usersRepository: usersRepository,
                                                             scheduler: useCaseScheduler)
 
-    private lazy var fetchAlbums = FetchAlbumsUseCase(albumsRepository: AlbumsRepositoryFactory.create(),
+    private lazy var albumsRepository = AlbumsRepositoryFactory.create()
+
+    private lazy var fetchAlbums = FetchAlbumsUseCase(albumsRepository: albumsRepository,
                                                       scheduler: useCaseScheduler)
+
+    private lazy var photosRepository = PhotosRepositoryFactory.create()
+
+    private lazy var fetchPhotosForAlbum = FetchPhotosForAlbum(photosRepository: photosRepository,
+                                                               scheduler: useCaseScheduler)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +47,8 @@ class TabBarController: UITabBarController {
         let albumsVC = UIStoryboard(name: "Albums", bundle: nil)
             .instantiateInitialViewController() as! AlbumsViewController
 
-        albumsVC.viewModel = AlbumsViewModel(fetchAlbums: fetchAlbums)
+        albumsVC.viewModel = AlbumsViewModel(fetchAlbums: fetchAlbums,
+                                             fetchPhotosForAlbum: fetchPhotosForAlbum)
 
         let albumsNV = UINavigationController(rootViewController: albumsVC)
         albumsNV.tabBarItem = UITabBarItem(title: "Albums", image: nil, selectedImage: nil)

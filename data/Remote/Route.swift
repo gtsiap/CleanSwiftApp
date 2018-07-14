@@ -31,6 +31,7 @@ enum Route {
     case fetchPosts
     case fetchUsers
     case fetchAlbums
+    case fetchPhotos
     
     func urlRequest() -> URLRequest {
         switch self {
@@ -40,6 +41,8 @@ enum Route {
             return RequestFactory(path: "users", method: .get).urlRequest()
         case .fetchAlbums:
             return RequestFactory(path: "albums", method: .get).urlRequest()
+        case .fetchPhotos:
+            return RequestFactory(path: "photos", method: .get).urlRequest()
         }
     }
 }
