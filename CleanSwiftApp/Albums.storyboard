@@ -56,7 +56,7 @@
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="trailingMargin" secondItem="YHg-Ft-tNC" secondAttribute="trailing" id="4rJ-xM-SKP"/>
-                                                        <constraint firstAttribute="height" constant="100" id="Oun-87-1ml"/>
+                                                        <constraint firstAttribute="height" priority="999" constant="100" id="Oun-87-1ml"/>
                                                         <constraint firstItem="YHg-Ft-tNC" firstAttribute="leading" secondItem="P3l-If-Chr" secondAttribute="leadingMargin" id="RB1-zl-3Df"/>
                                                         <constraint firstAttribute="bottomMargin" secondItem="YHg-Ft-tNC" secondAttribute="bottom" id="bcg-vP-K2I"/>
                                                         <constraint firstItem="YHg-Ft-tNC" firstAttribute="top" secondItem="P3l-If-Chr" secondAttribute="topMargin" id="uYW-9Q-D3C"/>

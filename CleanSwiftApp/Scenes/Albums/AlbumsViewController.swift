@@ -10,6 +10,7 @@ import UIKit
 import RxDataSources
 import Presentation
 import RxSwift
+
 class AlbumsViewController: BaseViewController<AlbumsViewModel> {
     @IBOutlet weak var albumsCollectionView: UICollectionView!
     @IBOutlet weak var albumsCollectionViewLayout: UICollectionViewFlowLayout! {
@@ -37,16 +38,16 @@ class AlbumsViewController: BaseViewController<AlbumsViewModel> {
 
     private lazy var photosDataSource: RxCollectionViewSectionedReloadDataSource = {
         return RxCollectionViewSectionedReloadDataSource<PhotoSection>(configureCell:
-            { (_, collectionView, indexPath, item) -> UICollectionViewCell in
+            { [unowned self] (_, collectionView, indexPath, item) -> UICollectionViewCell in
                 let cell = collectionView.dequeueReusableCell(PhotoViewCell.self, for: indexPath)
-
-                // 3 items per row
-                let itemsPerRow: CGFloat = 3
+                // 3 items per row for compact and 6 items per row for regular
+                let itemsPerRow: CGFloat = self.traitCollection.verticalSizeClass == .regular ? 3 : 6
                 let totalInteritemSpacing = self.photosCollectionViewLayout.minimumInteritemSpacing * (itemsPerRow - 1)
                 let availableWidth = collectionView.frame.width
                     - totalInteritemSpacing
                     - self.photosCollectionViewLayout.sectionInset.left
                     - self.photosCollectionViewLayout.sectionInset.right
+
 
                 cell.setupCellSize(width: floor(availableWidth / itemsPerRow))
                 cell.configureCell(item)
@@ -81,5 +82,13 @@ class AlbumsViewController: BaseViewController<AlbumsViewModel> {
 
         AppStyle.AlbumsViewControllerStyle.apply(albumsCollectionViewFlow: albumsCollectionViewLayout,
                                                  photosCollectionViewFlow: photosCollectionViewLayout)
+    }
+
+
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+
+        photosCollectionViewLayout.invalidateLayout()
+        photosCollectionView.layoutIfNeeded()
     }
 }
