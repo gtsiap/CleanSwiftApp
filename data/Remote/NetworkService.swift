@@ -13,6 +13,8 @@ import RxSwift
 protocol NetworkServiceType {
     func fetchPosts() -> Observable<[FetchPostsResponse]>
     func fetchUsers() -> Observable<[FetchUsersResponse]>
+    func fetchAlbums() -> Observable<[FetchAlbumsResponse]>
+    func fetchPhotos() -> Observable<[FetchPhotosResponse]>
 }
 
 extension NetworkServiceType {
@@ -22,6 +24,14 @@ extension NetworkServiceType {
 
     func fetchUsers() -> Observable<[FetchUsersResponse]> {
         return codable(route: .fetchUsers)
+    }
+
+    func fetchAlbums() -> Observable<[FetchAlbumsResponse]> {
+        return codable(route: .fetchAlbums)
+    }
+
+    func fetchPhotos() -> Observable<[FetchPhotosResponse]> {
+        return codable(route: .fetchPhotos)
     }
 
     private func codable<T: Codable>(route: Route) -> Observable<T>  {

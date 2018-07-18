@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Domain
 
 public struct Post {
     public let id: Int

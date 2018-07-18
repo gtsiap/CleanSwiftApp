@@ -9,7 +9,7 @@
 import UIKit
 import Presentation
 
-class PostViewCell: BaseViewCell {
+class PostViewCell: BaseTableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var bodyLabel: UILabel!
