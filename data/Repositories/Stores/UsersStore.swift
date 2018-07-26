@@ -6,15 +6,12 @@
 //  Copyright © 2018 Giorgos Tsiapaliokas. All rights reserved.
 //
 
-import Foundation
-
 import RxSwift
 import CoreData
 import Domain
 
-protocol UsersStore: Store where Entity == UserEntity {}
 
-final class RemoteUsersStore: UsersStore {
+final class RemoteUsersStore: RemoteFetchableStore {
     private let coreDataStack: CoreDataStack
     private let networkService: NetworkServiceType
 
@@ -38,13 +35,9 @@ final class RemoteUsersStore: UsersStore {
             return entity
         }
     }
-
-    func create(entities: [UserEntity]) -> Single<Void> {
-        return Single.just(())
-    }
 }
 
-final class LocalUsersStore: UsersStore {
+final class LocalUsersStore: LocalFetchableStore, LocalCreatableStore {
     private let coreDataStack: CoreDataStack
     init(coreDataStack: CoreDataStack) {
         self.coreDataStack = coreDataStack

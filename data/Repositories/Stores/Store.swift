@@ -9,8 +9,18 @@
 import RxSwift
 import CoreData
 
-protocol Store: class {
-    associatedtype Entity
+protocol RemoteFetchableStore: class {
+    associatedtype Entity: DataToDomainMappable
     func fetch() -> Observable<[Entity]>
-    func create(entities: [Entity]) -> Single<Void>
+}
+
+protocol LocalFetchableStore: class {
+    associatedtype Entity: DataToDomainMappable
+    func fetch() -> Observable<[Entity]>
+}
+
+
+protocol LocalCreatableStore: class {
+    associatedtype Entity: DataToDomainMappable
+     func create(entities: [Entity]) -> Single<Void>
 }

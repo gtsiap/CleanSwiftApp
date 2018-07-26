@@ -10,20 +10,7 @@ import Domain
 import RxSwift
 import CoreData
 
-final class AlbumsRepository<R: AlbumsStore, L: AlbumsStore>
-    : FetchableRepository
-    , Domain.AlbumsRepository
-{
-    typealias RemoteStore = R
-    typealias LocalStore = L
-    typealias Entity = AlbumEntity
-    typealias DomainModel = Domain.Album
-
-    let remoteStore: R
-    let localStore: L
-
-    init(remoteStore: R, localStore: L) {
-        self.remoteStore = remoteStore
-        self.localStore = localStore
-    }
+final class AlbumsRepository
+    : GenericRepository<RemoteAlbumsStore, LocalAlbumsStore>
+    , Domain.AlbumsRepository {
 }

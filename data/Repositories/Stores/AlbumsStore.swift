@@ -9,9 +9,7 @@
 import Foundation
 import RxSwift
 
-protocol AlbumsStore: Store where Entity == AlbumEntity {}
-
-final class RemoteAlbumsStore: AlbumsStore {
+final class RemoteAlbumsStore: RemoteFetchableStore {
     private let coreDataStack: CoreDataStack
     private let networkService: NetworkServiceType
 
@@ -36,13 +34,9 @@ final class RemoteAlbumsStore: AlbumsStore {
             return entity
         }
     }
-
-    func create(entities: [AlbumEntity]) -> Single<Void> {
-        return Single.just(())
-    }
 }
 
-final class LocalAlbumsStore: AlbumsStore {
+final class LocalAlbumsStore: LocalFetchableStore, LocalCreatableStore {
 
     private let coreDataStack: CoreDataStack
 

@@ -50,6 +50,7 @@
 		453B7ADF20218C4400B72472 /* PostWithUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453B7ADE20218C4400B72472 /* PostWithUser.swift */; };
 		453B7AE120218D3900B72472 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453B7AE020218D3900B72472 /* Error.swift */; };
 		453B7AE52021923200B72472 /* UsersRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453B7AE42021923200B72472 /* UsersRepositoryTests.swift */; };
+		45581B42210A2AD700709331 /* GenericRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45581B41210A2AD700709331 /* GenericRepository.swift */; };
 		455B2CB4202480E900A634AB /* PostsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455B2CB3202480E900A634AB /* PostsViewCell.swift */; };
 		455B2CB62024811300A634AB /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455B2CB52024811300A634AB /* Styles.swift */; };
 		455B2CB820249DE000A634AB /* AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455B2CB720249DE000A634AB /* AppStyle.swift */; };
@@ -261,6 +262,7 @@
 		453B7AE020218D3900B72472 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		453B7AE42021923200B72472 /* UsersRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRepositoryTests.swift; sourceTree = "<group>"; };
 		453E28B32019D98B00BD80F3 /* RxDataSources.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxDataSources.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		45581B41210A2AD700709331 /* GenericRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericRepository.swift; sourceTree = "<group>"; };
 		455B2CB3202480E900A634AB /* PostsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewCell.swift; sourceTree = "<group>"; };
 		455B2CB52024811300A634AB /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		455B2CB720249DE000A634AB /* AppStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStyle.swift; sourceTree = "<group>"; };
@@ -540,6 +542,7 @@
 				4593CF6F202DF7F500CE2DB1 /* AlbumsRepository.swift */,
 				459E6336201C79A60097528A /* FetchableRepository.swift */,
 				45CC7732207FA44A0004F063 /* PhotosRepository.swift */,
+				45581B41210A2AD700709331 /* GenericRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -1461,6 +1464,7 @@
 				45145569201A11C800939DC0 /* PostsStore.swift in Sources */,
 				4514557A201A1E4700939DC0 /* PostEntity+Mappable.swift in Sources */,
 				45881073201F78E000DF30FB /* UsersStore.swift in Sources */,
+				45581B42210A2AD700709331 /* GenericRepository.swift in Sources */,
 				45145563201A0DC900939DC0 /* NetworkService.swift in Sources */,
 				4514556C201A12F300939DC0 /* FetchPostsResponse.swift in Sources */,
 				45145578201A1DFC00939DC0 /* DataToDomainMappable.swift in Sources */,

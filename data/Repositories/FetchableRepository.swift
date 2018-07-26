@@ -11,13 +11,11 @@ import RxSwift
 import CoreData
 
 protocol FetchableRepository: class {
-    associatedtype RemoteStore: Store
-    associatedtype LocalStore: Store
-    associatedtype Entity where Entity: DataToDomainMappable
-    associatedtype DomainModel where
-        DomainModel == LocalStore.Entity.DomainModel,
-        LocalStore.Entity == RemoteStore.Entity,
-        LocalStore.Entity == Entity
+    associatedtype RemoteStore: RemoteFetchableStore where RemoteStore.Entity == Entity
+    associatedtype LocalStore: LocalFetchableStore & LocalCreatableStore
+
+    typealias Entity = LocalStore.Entity
+    typealias  DomainModel = Entity.DomainModel
 
     var remoteStore: RemoteStore { get }
     var localStore: LocalStore { get }

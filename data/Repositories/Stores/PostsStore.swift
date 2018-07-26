@@ -10,9 +10,7 @@ import RxSwift
 import CoreData
 import Domain
 
-protocol PostsStore: Store where Entity == PostEntity {}
-
-final class RemotePostsStore: PostsStore {
+final class RemotePostsStore: RemoteFetchableStore {
     private let coreDataStack: CoreDataStack
     private let networkService: NetworkServiceType
 
@@ -38,13 +36,9 @@ final class RemotePostsStore: PostsStore {
             return entity
         }
     }
-
-    func create(entities: [PostEntity]) -> Single<Void> {
-        return Single.just(())
-    }
 }
 
-final class LocalPostsStore: PostsStore {
+final class LocalPostsStore: LocalFetchableStore, LocalCreatableStore {
 
     private let coreDataStack: CoreDataStack
 

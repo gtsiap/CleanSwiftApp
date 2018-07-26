@@ -10,20 +10,7 @@ import Domain
 import RxSwift
 import CoreData
 
-final class UsersRepository<R: UsersStore, L: UsersStore>
-    : FetchableRepository
-    , Domain.UsersRepository
-{
-    typealias RemoteStore = R
-    typealias LocalStore = L
-    typealias Entity = UserEntity
-    typealias DomainModel = Domain.User
-
-    let remoteStore: R
-    let localStore: L
-
-    init(remoteStore: R, localStore: L) {
-        self.remoteStore = remoteStore
-        self.localStore = localStore
-    }
+final class UsersRepository
+    : GenericRepository<RemoteUsersStore, LocalUsersStore>
+    , Domain.UsersRepository {
 }

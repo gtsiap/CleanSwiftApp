@@ -7,14 +7,9 @@
 //
 
 import Foundation
-
-
-import Foundation
 import RxSwift
 
-protocol PhotosStore: Store where Entity == PhotoEntity {}
-
-final class RemotePhotosStore: PhotosStore {
+final class RemotePhotosStore: RemoteFetchableStore {
     private let coreDataStack: CoreDataStack
     private let networkService: NetworkServiceType
 
@@ -39,13 +34,9 @@ final class RemotePhotosStore: PhotosStore {
             return entity
         }
     }
-
-    func create(entities: [PhotoEntity]) -> Single<Void> {
-        return Single.just(())
-    }
 }
 
-final class LocalPhotosStore: PhotosStore {
+final class LocalPhotosStore: LocalFetchableStore, LocalCreatableStore {
 
     private let coreDataStack: CoreDataStack
 
