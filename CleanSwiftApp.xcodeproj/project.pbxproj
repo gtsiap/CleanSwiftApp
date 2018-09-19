@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		23F5DC14AFE1C4493540DA3A /* Pods_Tests_dataTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D2427DFDEEDE1DB3D50E083 /* Pods_Tests_dataTests.framework */; };
+		450BA732212DB5DF000F1701 /* RemoteFetchableStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450BA731212DB5DF000F1701 /* RemoteFetchableStore.swift */; };
+		450BA734212DB62E000F1701 /* LocalFetchableStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450BA733212DB62E000F1701 /* LocalFetchableStore.swift */; };
+		450BA736212DB808000F1701 /* FetchPostsResponse+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450BA735212DB808000F1701 /* FetchPostsResponse+Mappable.swift */; };
+		450BA738212DB88E000F1701 /* FetchAlbumsResponse+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450BA737212DB88E000F1701 /* FetchAlbumsResponse+Mappable.swift */; };
+		450BA73A212DB8E9000F1701 /* FetchPhotosResponse+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450BA739212DB8E9000F1701 /* FetchPhotosResponse+Mappable.swift */; };
 		4514551A2019E7CB00939DC0 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451455192019E7CB00939DC0 /* Post.swift */; };
 		4514551C2019E84F00939DC0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4514551B2019E84F00939DC0 /* User.swift */; };
 		4514551F2019E89400939DC0 /* PostsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4514551E2019E89400939DC0 /* PostsRepository.swift */; };
@@ -51,6 +56,8 @@
 		453B7AE120218D3900B72472 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453B7AE020218D3900B72472 /* Error.swift */; };
 		453B7AE52021923200B72472 /* UsersRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453B7AE42021923200B72472 /* UsersRepositoryTests.swift */; };
 		45581B42210A2AD700709331 /* GenericRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45581B41210A2AD700709331 /* GenericRepository.swift */; };
+		45581B45210D8C5000709331 /* NetworkResponseToDataMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45581B44210D8C5000709331 /* NetworkResponseToDataMappable.swift */; };
+		45581B47210D8CC300709331 /* FetchUsersResponse+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45581B46210D8CC300709331 /* FetchUsersResponse+Mappable.swift */; };
 		455B2CB4202480E900A634AB /* PostsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455B2CB3202480E900A634AB /* PostsViewCell.swift */; };
 		455B2CB62024811300A634AB /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455B2CB52024811300A634AB /* Styles.swift */; };
 		455B2CB820249DE000A634AB /* AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455B2CB720249DE000A634AB /* AppStyle.swift */; };
@@ -85,7 +92,6 @@
 		45961AFB2019DB0200EF5B5C /* data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45961AE62019DB0200EF5B5C /* data.framework */; };
 		45961AFC2019DB0200EF5B5C /* data.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 45961AE62019DB0200EF5B5C /* data.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		459E6337201C79A60097528A /* FetchableRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459E6336201C79A60097528A /* FetchableRepository.swift */; };
-		459E6339201C7A450097528A /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459E6338201C7A450097528A /* Store.swift */; };
 		45B14773203327150093D4FF /* AlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B14772203327150093D4FF /* AlbumsViewController.swift */; };
 		45B14775203327EB0093D4FF /* AlbumsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B14774203327EB0093D4FF /* AlbumsViewModel.swift */; };
 		45B14777203329840093D4FF /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B14776203329840093D4FF /* Album.swift */; };
@@ -216,6 +222,11 @@
 		105635174721496002FE55E2 /* Pods-Tests-DomainTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests-DomainTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tests-DomainTests/Pods-Tests-DomainTests.debug.xcconfig"; sourceTree = "<group>"; };
 		1CDE8DD5659983B4E7D178DC /* Pods-Tests-dataTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests-dataTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tests-dataTests/Pods-Tests-dataTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3FD710205D38A9537FDDB09A /* Pods_Application_Presentation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Application_Presentation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		450BA731212DB5DF000F1701 /* RemoteFetchableStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFetchableStore.swift; sourceTree = "<group>"; };
+		450BA733212DB62E000F1701 /* LocalFetchableStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFetchableStore.swift; sourceTree = "<group>"; };
+		450BA735212DB808000F1701 /* FetchPostsResponse+Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FetchPostsResponse+Mappable.swift"; sourceTree = "<group>"; };
+		450BA737212DB88E000F1701 /* FetchAlbumsResponse+Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FetchAlbumsResponse+Mappable.swift"; sourceTree = "<group>"; };
+		450BA739212DB8E9000F1701 /* FetchPhotosResponse+Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FetchPhotosResponse+Mappable.swift"; sourceTree = "<group>"; };
 		451455192019E7CB00939DC0 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		4514551B2019E84F00939DC0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4514551E2019E89400939DC0 /* PostsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsRepository.swift; sourceTree = "<group>"; };
@@ -263,6 +274,8 @@
 		453B7AE42021923200B72472 /* UsersRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRepositoryTests.swift; sourceTree = "<group>"; };
 		453E28B32019D98B00BD80F3 /* RxDataSources.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxDataSources.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		45581B41210A2AD700709331 /* GenericRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericRepository.swift; sourceTree = "<group>"; };
+		45581B44210D8C5000709331 /* NetworkResponseToDataMappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResponseToDataMappable.swift; sourceTree = "<group>"; };
+		45581B46210D8CC300709331 /* FetchUsersResponse+Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FetchUsersResponse+Mappable.swift"; sourceTree = "<group>"; };
 		455B2CB3202480E900A634AB /* PostsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewCell.swift; sourceTree = "<group>"; };
 		455B2CB52024811300A634AB /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		455B2CB720249DE000A634AB /* AppStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStyle.swift; sourceTree = "<group>"; };
@@ -299,7 +312,6 @@
 		45961AF52019DB0200EF5B5C /* DataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTests.swift; sourceTree = "<group>"; };
 		45961AF72019DB0200EF5B5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		459E6336201C79A60097528A /* FetchableRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchableRepository.swift; sourceTree = "<group>"; };
-		459E6338201C7A450097528A /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		45B14772203327150093D4FF /* AlbumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsViewController.swift; sourceTree = "<group>"; };
 		45B14774203327EB0093D4FF /* AlbumsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsViewModel.swift; sourceTree = "<group>"; };
 		45B14776203329840093D4FF /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
@@ -526,9 +538,11 @@
 		45145561201A0DB200939DC0 /* Remote */ = {
 			isa = PBXGroup;
 			children = (
+				45581B43210D8C0100709331 /* NetworkResponse to Data Mapper */,
 				4514556A201A12E000939DC0 /* Responses */,
 				45145562201A0DC900939DC0 /* NetworkService.swift */,
 				45145564201A0DE000939DC0 /* Route.swift */,
+				450BA731212DB5DF000F1701 /* RemoteFetchableStore.swift */,
 			);
 			path = Remote;
 			sourceTree = "<group>";
@@ -550,7 +564,6 @@
 		45145567201A11A100939DC0 /* Stores */ = {
 			isa = PBXGroup;
 			children = (
-				459E6338201C7A450097528A /* Store.swift */,
 				45145568201A11C800939DC0 /* PostsStore.swift */,
 				45881072201F78E000DF30FB /* UsersStore.swift */,
 				4593CF6D202DF50F00CE2DB1 /* AlbumsStore.swift */,
@@ -583,6 +596,7 @@
 				4514556F201A147400939DC0 /* Model.xcdatamodeld */,
 				45145574201A1B9900939DC0 /* CoreDataStack.swift */,
 				4514557B201A390800939DC0 /* NSManagedObjectContext+Extensions.swift */,
+				450BA733212DB62E000F1701 /* LocalFetchableStore.swift */,
 			);
 			path = Local;
 			sourceTree = "<group>";
@@ -672,6 +686,18 @@
 				3FD710205D38A9537FDDB09A /* Pods_Application_Presentation.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		45581B43210D8C0100709331 /* NetworkResponse to Data Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				45581B44210D8C5000709331 /* NetworkResponseToDataMappable.swift */,
+				45581B46210D8CC300709331 /* FetchUsersResponse+Mappable.swift */,
+				450BA735212DB808000F1701 /* FetchPostsResponse+Mappable.swift */,
+				450BA737212DB88E000F1701 /* FetchAlbumsResponse+Mappable.swift */,
+				450BA739212DB8E9000F1701 /* FetchPhotosResponse+Mappable.swift */,
+			);
+			path = "NetworkResponse to Data Mapper";
 			sourceTree = "<group>";
 		};
 		455B2CB2202480BD00A634AB /* Styles */ = {
@@ -1457,23 +1483,29 @@
 				4514557C201A390800939DC0 /* NSManagedObjectContext+Extensions.swift in Sources */,
 				4593CF6C202DF43600CE2DB1 /* FetchAlbumsResponse.swift in Sources */,
 				4593CF70202DF7F500CE2DB1 /* AlbumsRepository.swift in Sources */,
+				450BA734212DB62E000F1701 /* LocalFetchableStore.swift in Sources */,
 				45145575201A1B9900939DC0 /* CoreDataStack.swift in Sources */,
 				45145565201A0DE000939DC0 /* Route.swift in Sources */,
 				45CC7735207FA5770004F063 /* PhotosStore.swift in Sources */,
-				459E6339201C7A450097528A /* Store.swift in Sources */,
 				45145569201A11C800939DC0 /* PostsStore.swift in Sources */,
+				450BA732212DB5DF000F1701 /* RemoteFetchableStore.swift in Sources */,
+				450BA738212DB88E000F1701 /* FetchAlbumsResponse+Mappable.swift in Sources */,
 				4514557A201A1E4700939DC0 /* PostEntity+Mappable.swift in Sources */,
 				45881073201F78E000DF30FB /* UsersStore.swift in Sources */,
 				45581B42210A2AD700709331 /* GenericRepository.swift in Sources */,
+				450BA736212DB808000F1701 /* FetchPostsResponse+Mappable.swift in Sources */,
 				45145563201A0DC900939DC0 /* NetworkService.swift in Sources */,
+				45581B45210D8C5000709331 /* NetworkResponseToDataMappable.swift in Sources */,
 				4514556C201A12F300939DC0 /* FetchPostsResponse.swift in Sources */,
 				45145578201A1DFC00939DC0 /* DataToDomainMappable.swift in Sources */,
+				450BA73A212DB8E9000F1701 /* FetchPhotosResponse+Mappable.swift in Sources */,
 				45CC773B207FA84E0004F063 /* PhotoEntity+Mappable.swift in Sources */,
 				45CC7733207FA44A0004F063 /* PhotosRepository.swift in Sources */,
 				457EAB992024481700FD85C6 /* UsersRepositoryFactory.swift in Sources */,
 				459E6337201C79A60097528A /* FetchableRepository.swift in Sources */,
 				4593CF72202DF8C300CE2DB1 /* AlbumEntity+Mappable.swift in Sources */,
 				457EAB9B2024497300FD85C6 /* PostsReporitoryFactory.swift in Sources */,
+				45581B47210D8CC300709331 /* FetchUsersResponse+Mappable.swift in Sources */,
 				4514552C2019EF3600939DC0 /* PostsRepository.swift in Sources */,
 				4588107B201F7B9900DF30FB /* UserEntity+Mappable.swift in Sources */,
 				45D96C162035D48300E0787B /* AlbumsRepositoryFactory.swift in Sources */,

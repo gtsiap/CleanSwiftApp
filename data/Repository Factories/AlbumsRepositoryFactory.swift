@@ -13,8 +13,8 @@ public struct AlbumsRepositoryFactory {
         let networkService: NetworkServiceType = NetworkService()
         let coreDataStack = CoreDataStack.shared
         return AlbumsRepository(remoteStore: RemoteAlbumsStore(coreDataStack: coreDataStack,
-                                                               networkService: networkService),
-                               localStore: LocalAlbumsStore(coreDataStack: coreDataStack))
+                                                               fetchRequest: networkService.fetchAlbums),
+                                localStore: LocalAlbumsStore(coreDataStack: coreDataStack))
 
     }
 }

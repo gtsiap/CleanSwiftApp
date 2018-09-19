@@ -12,7 +12,8 @@ public struct PostsRepositoryFactory {
     public static func create() -> Domain.PostsRepository {
         let networkService: NetworkServiceType = NetworkService()
         let coreDataStack = CoreDataStack.shared
-        return PostsRepository(remoteStore: RemotePostsStore(coreDataStack: coreDataStack, networkService: networkService),
+        return PostsRepository(remoteStore: RemotePostsStore(coreDataStack: coreDataStack,
+                                                             fetchRequest: networkService.fetchPosts),
                                localStore: LocalPostsStore(coreDataStack: coreDataStack))
 
     }

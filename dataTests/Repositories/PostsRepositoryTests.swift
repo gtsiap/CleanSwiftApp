@@ -31,7 +31,8 @@ class PostsRepositoryTests: DataTestCase {
 
     func testIfPostExists() throws {
         let localStore = LocalPostsStore(coreDataStack: coreDataStack)
-        let remoteStore = RemotePostsStore(coreDataStack: coreDataStack, networkService: mockedNetworkService)
+        let remoteStore = RemotePostsStore(coreDataStack: coreDataStack,
+                                           fetchRequest: mockedNetworkService.fetchPosts)
 
         let repository = PostsRepository(remoteStore: remoteStore, localStore: localStore)
 

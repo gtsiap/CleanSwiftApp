@@ -12,7 +12,8 @@ public struct UsersRepositoryFactory {
     public static func create() -> Domain.UsersRepository {
         let networkService: NetworkServiceType = NetworkService()
         let coreDataStack = CoreDataStack.shared
-        return UsersRepository(remoteStore: RemoteUsersStore(coreDataStack: coreDataStack, networkService: networkService),
+        return UsersRepository(remoteStore: RemoteUsersStore(coreDataStack: coreDataStack,
+                                                             fetchRequest: networkService.fetchUsers),
                                localStore: LocalUsersStore(coreDataStack: coreDataStack))
 
     }

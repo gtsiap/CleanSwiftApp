@@ -30,7 +30,8 @@ class AlbumsRepositoryTests: DataTestCase {
 
     func testIfAlbumExists() throws {
         let localStore = LocalAlbumsStore(coreDataStack: coreDataStack)
-        let remoteStore = RemoteAlbumsStore(coreDataStack: coreDataStack, networkService: mockedNetworkService)
+        let remoteStore = RemoteAlbumsStore(coreDataStack: coreDataStack,
+                                            fetchRequest: mockedNetworkService.fetchAlbums)
 
         let repository = AlbumsRepository(remoteStore: remoteStore, localStore: localStore)
 

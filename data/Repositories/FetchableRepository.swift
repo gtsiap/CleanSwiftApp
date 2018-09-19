@@ -11,7 +11,7 @@ import RxSwift
 import CoreData
 
 protocol FetchableRepository: class {
-    associatedtype RemoteStore: RemoteFetchableStore where RemoteStore.Entity == Entity
+    associatedtype RemoteStore: RemoteFetchableStore where RemoteStore.FetchRequestResponse.Entity == Entity
     associatedtype LocalStore: LocalFetchableStore & LocalCreatableStore
 
     typealias Entity = LocalStore.Entity

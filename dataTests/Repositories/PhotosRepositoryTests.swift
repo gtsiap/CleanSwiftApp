@@ -33,7 +33,8 @@ class PhotosRepositoryTests: DataTestCase {
 
     func testIfPhotoExists() throws {
         let localStore = LocalPhotosStore(coreDataStack: coreDataStack)
-        let remoteStore = RemotePhotosStore(coreDataStack: coreDataStack, networkService: mockedNetworkService)
+        let remoteStore = RemotePhotosStore(coreDataStack: coreDataStack,
+                                            fetchRequest: mockedNetworkService.fetchPhotos)
 
         let repository = PhotosRepository(remoteStore: remoteStore, localStore: localStore)
 

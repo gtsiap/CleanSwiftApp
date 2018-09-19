@@ -30,7 +30,8 @@ class UsersRepositoryTests: DataTestCase {
 
     func testIfUserExists() throws {
         let localStore = LocalUsersStore(coreDataStack: coreDataStack)
-        let remoteStore = RemoteUsersStore(coreDataStack: coreDataStack, networkService: mockedNetworkService)
+        let remoteStore = RemoteUsersStore(coreDataStack: coreDataStack,
+                                           fetchRequest: mockedNetworkService.fetchUsers)
 
         let repository = UsersRepository(remoteStore: remoteStore, localStore: localStore)
 

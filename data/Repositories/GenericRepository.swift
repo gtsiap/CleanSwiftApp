@@ -10,7 +10,7 @@ import Foundation
 
 class GenericRepository<R, L>: FetchableRepository
     where
-    L.Entity == R.Entity,
+    L.Entity == R.FetchRequestResponse.Entity,
     R: RemoteFetchableStore,
     L: LocalFetchableStore & LocalCreatableStore
 {

@@ -13,7 +13,7 @@ public struct PhotosRepositoryFactory {
         let networkService: NetworkServiceType = NetworkService()
         let coreDataStack = CoreDataStack.shared
         return PhotosRepository(remoteStore: RemotePhotosStore(coreDataStack: coreDataStack,
-                                                               networkService: networkService),
+                                                               fetchRequest: networkService.fetchPhotos),
                                 localStore: LocalPhotosStore(coreDataStack: coreDataStack))
 
     }
