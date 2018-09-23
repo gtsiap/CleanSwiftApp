@@ -11,8 +11,13 @@ import Foundation
 extension AppStyle {
     public struct AlbumViewCellStyle {
         private static let titleStyle = [
-            Styles.Label.textColor(textColor: UIColor.black),
+            Styles.Label.textColor(textColor: .black),
             Styles.Label.font(font: UIFont.preferredFont(forTextStyle: .title3))
+        ]
+
+        private static let albumIdStyle = [
+            Styles.Label.textColor(textColor: .black),
+            Styles.Label.font(font: .preferredFont(forTextStyle: .caption1))
         ]
 
         private static let cellInsets = Styles.View.layoutMargins(insets: Insets(topAndBottom: 10,
@@ -23,10 +28,12 @@ extension AppStyle {
         private static let cornerRadius = Styles.View.cornerRadius(radius: 10)
 
         public static func apply(titleLabel: UILabel,
+                                 albumIdLabel: UILabel,
                                  contentView: UIView) {
             titleStyle.apply(titleLabel)
             cellInsets.apply(view: contentView)
             border.apply(view: contentView)
+            albumIdStyle.apply(albumIdLabel)
             cornerRadius.apply(view: contentView)
         }
     }
