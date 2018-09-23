@@ -18,6 +18,7 @@ extension NSManagedObjectContext {
     func fetchObjects<T: NSManagedObject>(_ managedObject: T.Type) throws -> [T] {
         let entityName = String(describing: T.self)
         let fetchRequest = NSFetchRequest<T>(entityName: entityName)
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "id", ascending: true)]
         let result = try fetch(fetchRequest)
         return result
     }
