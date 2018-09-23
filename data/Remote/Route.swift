@@ -10,7 +10,7 @@ import Foundation
 
 enum Route {
     private static let baseURL = URL(string: "https://jsonplaceholder.typicode.com/")!
-    struct RequestFactory {
+    private struct Request {
         enum Method: String {
             case get = "GET"
         }
@@ -36,13 +36,13 @@ enum Route {
     func urlRequest() -> URLRequest {
         switch self {
         case .fetchPosts:
-            return RequestFactory(path: "posts", method: .get).urlRequest()
+            return Request(path: "posts", method: .get).urlRequest()
         case .fetchUsers:
-            return RequestFactory(path: "users", method: .get).urlRequest()
+            return Request(path: "users", method: .get).urlRequest()
         case .fetchAlbums:
-            return RequestFactory(path: "albums", method: .get).urlRequest()
+            return Request(path: "albums", method: .get).urlRequest()
         case .fetchPhotos:
-            return RequestFactory(path: "photos", method: .get).urlRequest()
+            return Request(path: "photos", method: .get).urlRequest()
         }
     }
 }
