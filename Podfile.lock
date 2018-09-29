@@ -1,15 +1,15 @@
 PODS:
-  - Differentiator (3.0.2)
-  - Kingfisher (4.8.0)
-  - RxBlocking (4.1.1):
+  - Differentiator (3.1.0)
+  - Kingfisher (4.10.0)
+  - RxBlocking (4.3.1):
     - RxSwift (~> 4.0)
-  - RxCocoa (4.1.1):
+  - RxCocoa (4.3.1):
     - RxSwift (~> 4.0)
-  - RxDataSources (3.0.2):
+  - RxDataSources (3.1.0):
     - Differentiator (~> 3.0)
     - RxCocoa (~> 4.0)
     - RxSwift (~> 4.0)
-  - RxSwift (4.1.1)
+  - RxSwift (4.3.1)
 
 DEPENDENCIES:
   - Kingfisher (~> 4.8)
@@ -18,14 +18,23 @@ DEPENDENCIES:
   - RxDataSources (~> 3.0)
   - RxSwift (~> 4.0)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Differentiator
+    - Kingfisher
+    - RxBlocking
+    - RxCocoa
+    - RxDataSources
+    - RxSwift
+
 SPEC CHECKSUMS:
-  Differentiator: a87be69eba49ec4ab460c7671143ee3a9eececfd
-  Kingfisher: 976d828df2b24834c6a3f2fc4d82cdbd26552be1
-  RxBlocking: 22e7d7b86a1c0c42164a30d64f56f97128b4ffab
-  RxCocoa: fd0862fd2df95fa55562ad28ffd2522c25eb4a85
-  RxDataSources: cb7c31e652a87ebb919da45f716bbb87b3765f6b
-  RxSwift: c6e3b1c7b325c7d121cd4327e9d98b7ed746b570
+  Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
+  Kingfisher: 43c4b802d8b5256cf1f4379e9cd10b329be6d3e2
+  RxBlocking: 64c051285261ca2339481e91b5f70eb06b03660a
+  RxCocoa: 78763c7b07d02455598d9fc3c1ad091a28b73635
+  RxDataSources: a843bad90c29817f5923ec8163f4af2de084ceb3
+  RxSwift: fe0fd770a43acdb7d0a53da411c9b892e69bb6e4
 
 PODFILE CHECKSUM: ef283e4b336195d6311dcec36f5421c641586378
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3

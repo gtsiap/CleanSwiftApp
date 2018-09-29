@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XZi-eu-bJA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XZi-eu-bJA">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -42,33 +39,36 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Lr0-eI-0VX" userLabel="ContentStackView">
-                                                    <rect key="frame" x="37" y="29" width="42" height="41"/>
+                                                    <rect key="frame" x="8" y="28" width="90" height="64"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YHg-Ft-tNC" userLabel="albumTitle">
-                                                            <rect key="frame" x="0.0" y="0.0" width="110" height="62"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="90" height="41"/>
+                                                            <accessibility key="accessibilityConfiguration" identifier="titleLabel"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S1n-w7-v8W" userLabel="albumId">
-                                                            <rect key="frame" x="0.0" y="72" width="110" height="18"/>
+                                                            <rect key="frame" x="0.0" y="51" width="90" height="13"/>
+                                                            <accessibility key="accessibilityConfiguration" identifier="albumLabel"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="90" id="CAe-DW-o4T"/>
-                                                        <constraint firstAttribute="width" constant="110" id="ueE-xg-f1F"/>
+                                                        <constraint firstAttribute="height" priority="999" constant="80" id="8B2-4x-8gm"/>
+                                                        <constraint firstAttribute="width" constant="90" id="LPs-je-bfT"/>
                                                         <constraint firstItem="S1n-w7-v8W" firstAttribute="height" secondItem="Lr0-eI-0VX" secondAttribute="height" multiplier="0.2" id="vrf-GD-aie"/>
                                                     </constraints>
                                                 </stackView>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="Lr0-eI-0VX" firstAttribute="bottom" secondItem="eG5-c5-bUG" secondAttribute="bottom" constant="-10" id="GhJ-5Q-npG"/>
-                                            <constraint firstItem="Lr0-eI-0VX" firstAttribute="leading" secondItem="eG5-c5-bUG" secondAttribute="leading" constant="10" id="X2S-Cg-y2C"/>
-                                            <constraint firstItem="Lr0-eI-0VX" firstAttribute="top" secondItem="eG5-c5-bUG" secondAttribute="top" id="iK8-mn-VBX"/>
+                                            <constraint firstItem="Lr0-eI-0VX" firstAttribute="topMargin" secondItem="eG5-c5-bUG" secondAttribute="topMargin" id="Lpf-qT-jO6"/>
+                                            <constraint firstItem="Lr0-eI-0VX" firstAttribute="leadingMargin" secondItem="eG5-c5-bUG" secondAttribute="leadingMargin" id="Xvd-Ms-Lw7"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="Lr0-eI-0VX" secondAttribute="bottomMargin" priority="999" id="cFJ-3G-UKt"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="Lr0-eI-0VX" secondAttribute="trailingMargin" priority="999" id="zPj-Al-1R6"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="albumId" destination="S1n-w7-v8W" id="4zb-Eh-dnx"/>
@@ -132,9 +132,7 @@
                     </view>
                     <connections>
                         <outlet property="albumsCollectionView" destination="vEx-Pw-v2e" id="kH5-xf-v7k"/>
-                        <outlet property="albumsCollectionViewLayout" destination="2l8-b6-zif" id="00A-yI-oUX"/>
                         <outlet property="photosCollectionView" destination="jsD-T1-fII" id="Jr0-wd-5XH"/>
-                        <outlet property="photosCollectionViewLayout" destination="KeA-qs-Ane" id="lbJ-al-EGw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z0P-5S-0Lc" userLabel="First Responder" sceneMemberID="firstResponder"/>

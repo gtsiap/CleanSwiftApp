@@ -96,6 +96,7 @@
 		45B14775203327EB0093D4FF /* AlbumsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B14774203327EB0093D4FF /* AlbumsViewModel.swift */; };
 		45B14777203329840093D4FF /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B14776203329840093D4FF /* Album.swift */; };
 		45B14779203329D10093D4FF /* Album+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B14778203329D10093D4FF /* Album+Mappable.swift */; };
+		45B77E2C215F765E0038AFBD /* SelfSizingCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B77E2B215F765E0038AFBD /* SelfSizingCollectionViewDelegate.swift */; };
 		45C832BB20FF669F00BF2DB1 /* PhotosRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C832BA20FF669F00BF2DB1 /* PhotosRepositoryTests.swift */; };
 		45C832BD20FF699400BF2DB1 /* FetchPhotosForAlbumUsecaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C832BC20FF699400BF2DB1 /* FetchPhotosForAlbumUsecaseTests.swift */; };
 		45CC7731207FA3140004F063 /* PhotosRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CC7730207FA3140004F063 /* PhotosRepository.swift */; };
@@ -316,6 +317,7 @@
 		45B14774203327EB0093D4FF /* AlbumsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsViewModel.swift; sourceTree = "<group>"; };
 		45B14776203329840093D4FF /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		45B14778203329D10093D4FF /* Album+Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Album+Mappable.swift"; sourceTree = "<group>"; };
+		45B77E2B215F765E0038AFBD /* SelfSizingCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfSizingCollectionViewDelegate.swift; sourceTree = "<group>"; };
 		45C832BA20FF669F00BF2DB1 /* PhotosRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosRepositoryTests.swift; sourceTree = "<group>"; };
 		45C832BC20FF699400BF2DB1 /* FetchPhotosForAlbumUsecaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPhotosForAlbumUsecaseTests.swift; sourceTree = "<group>"; };
 		45CC7730207FA3140004F063 /* PhotosRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosRepository.swift; sourceTree = "<group>"; };
@@ -521,6 +523,7 @@
 			isa = PBXGroup;
 			children = (
 				451455582019F55A00939DC0 /* Reuseable.swift */,
+				45B77E2B215F765E0038AFBD /* SelfSizingCollectionViewDelegate.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -853,7 +856,6 @@
 				4514552E2019F0D400939DC0 /* Frameworks */,
 				4514552F2019F0D400939DC0 /* Headers */,
 				451455302019F0D400939DC0 /* Resources */,
-				3E08EA11221431177FE963C0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -893,7 +895,6 @@
 				4532F01F2019D804003BB701 /* Frameworks */,
 				4532F0202019D804003BB701 /* Resources */,
 				FC4D2260CDE4FC4AB4BE96DD /* [CP] Embed Pods Frameworks */,
-				E539426F8A5A7DE58D03A181 /* [CP] Copy Pods Resources */,
 				45961ADF2019DAF600EF5B5C /* Embed Frameworks */,
 			);
 			buildRules = (
@@ -917,7 +918,6 @@
 				45961ABF2019DAF600EF5B5C /* Frameworks */,
 				45961AC02019DAF600EF5B5C /* Headers */,
 				45961AC12019DAF600EF5B5C /* Resources */,
-				6624BD8103225D67EB55FA23 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -937,7 +937,6 @@
 				45961AC82019DAF600EF5B5C /* Frameworks */,
 				45961AC92019DAF600EF5B5C /* Resources */,
 				EC184A98713D6536D8879C12 /* [CP] Embed Pods Frameworks */,
-				3724660C7F873A1D8346EEE0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -959,7 +958,6 @@
 				45961AE22019DB0200EF5B5C /* Frameworks */,
 				45961AE32019DB0200EF5B5C /* Headers */,
 				45961AE42019DB0200EF5B5C /* Resources */,
-				C1FF865209A0EC9D62763842 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -980,7 +978,6 @@
 				45961AEB2019DB0200EF5B5C /* Frameworks */,
 				45961AEC2019DB0200EF5B5C /* Resources */,
 				80DD97AE2B70B56DEC9D1FDB /* [CP] Embed Pods Frameworks */,
-				D60BC30CAFB92E84763D19D2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1000,40 +997,44 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Giorgos Tsiapaliokas";
 				TargetAttributes = {
 					451455312019F0D400939DC0 = {
 						CreatedOnToolsVersion = 9.2;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 					451455392019F0D400939DC0 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 4532F0212019D804003BB701;
 					};
 					4532F0212019D804003BB701 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 					45961AC22019DAF600EF5B5C = {
 						CreatedOnToolsVersion = 9.2;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 					45961ACA2019DAF600EF5B5C = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 4532F0212019D804003BB701;
 					};
 					45961AE52019DB0200EF5B5C = {
 						CreatedOnToolsVersion = 9.2;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 					45961AED2019DB0200EF5B5C = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 4532F0212019D804003BB701;
 					};
@@ -1157,36 +1158,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3724660C7F873A1D8346EEE0 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tests-DomainTests/Pods-Tests-DomainTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3E08EA11221431177FE963C0 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Application-Presentation/Pods-Application-Presentation-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		63230982D823320A94AECD33 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1203,21 +1174,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6624BD8103225D67EB55FA23 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Domain/Pods-Domain-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		80DD97AE2B70B56DEC9D1FDB /* [CP] Embed Pods Frameworks */ = {
@@ -1260,21 +1216,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C1FF865209A0EC9D62763842 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-data/Pods-data-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		C7E1715FA535D72C10E25492 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1291,36 +1232,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D60BC30CAFB92E84763D19D2 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tests-dataTests/Pods-Tests-dataTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E539426F8A5A7DE58D03A181 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Application-CleanSwiftApp/Pods-Application-CleanSwiftApp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EC184A98713D6536D8879C12 /* [CP] Embed Pods Frameworks */ = {
@@ -1425,6 +1336,7 @@
 				45145560201A092E00939DC0 /* BaseTableViewCell.swift in Sources */,
 				45D96C182035D65500E0787B /* AlbumViewCell.swift in Sources */,
 				4514555B2019F61C00939DC0 /* PostViewCell.swift in Sources */,
+				45B77E2C215F765E0038AFBD /* SelfSizingCollectionViewDelegate.swift in Sources */,
 				45B14773203327150093D4FF /* AlbumsViewController.swift in Sources */,
 				451455592019F55A00939DC0 /* Reuseable.swift in Sources */,
 				451DAEEA205466AD007314D3 /* PhotoViewCell.swift in Sources */,
@@ -1634,7 +1546,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1659,7 +1571,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.terietor.Presentation;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1675,7 +1587,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.terietor.PresentationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CleanSwiftApp.app/CleanSwiftApp";
 			};
@@ -1690,7 +1602,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.terietor.PresentationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CleanSwiftApp.app/CleanSwiftApp";
 			};
@@ -1710,6 +1622,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -1717,6 +1630,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -1767,6 +1681,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -1774,6 +1689,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -1814,7 +1730,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.terietor.CleanSwiftApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1830,7 +1746,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.terietor.CleanSwiftApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1855,7 +1771,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1881,7 +1797,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.terietor.Domain;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1898,7 +1814,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.terietor.DomainTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CleanSwiftApp.app/CleanSwiftApp";
 			};
@@ -1914,7 +1830,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.terietor.DomainTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CleanSwiftApp.app/CleanSwiftApp";
 			};
@@ -1940,7 +1856,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1966,7 +1882,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.terietor.Data;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1983,7 +1899,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.terietor.DataTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CleanSwiftApp.app/CleanSwiftApp";
 			};
@@ -1999,7 +1915,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.terietor.DataTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CleanSwiftApp.app/CleanSwiftApp";
 			};
