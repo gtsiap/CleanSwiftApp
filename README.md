@@ -8,4 +8,5 @@ I started this project because I wanted to experiment with Clean Architecture in
 This project has been influenced by
 
 https://github.com/sergdort/CleanArchitectureRxSwift
+
 https://github.com/android10/Android-CleanArchitecture
