@@ -9,7 +9,9 @@
 import UIKit
 import RxDataSources
 
-class PostsViewController: BaseViewController<PostsViewModel> {
+class PostsViewController: BaseViewController<PostsViewModel>, ScrollViewContainedHolder {
+
+    var scrollView: UIScrollView { return tableView }
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -23,6 +25,7 @@ class PostsViewController: BaseViewController<PostsViewModel> {
     }()
 
     override func bindViewModel() {
+
         let output = viewModel.transform(input: PostsViewModel.Input())
 
         output

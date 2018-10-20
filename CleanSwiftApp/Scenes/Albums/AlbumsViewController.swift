@@ -43,9 +43,11 @@ private func configureCellForPhoto(with item: Photo,
     return cell
 }
 
-class AlbumsViewController: BaseViewController<AlbumsViewModel> {
+class AlbumsViewController: BaseViewController<AlbumsViewModel>, ScrollViewContainedHolder {
     private let albumsCollectionViewDelegate = SelfSizingCollectionViewDelegate<Album, AlbumsSection>(configureCell: configureCellForAlbum)
     private let photosCollectionViewDelegate = SelfSizingCollectionViewDelegate<Photo, PhotoSection>(configureCell: configureCellForPhoto)
+
+    var scrollView: UIScrollView { return albumsCollectionView }
 
     @IBOutlet weak var albumsCollectionView: UICollectionView! {
         didSet {
@@ -112,7 +114,6 @@ class AlbumsViewController: BaseViewController<AlbumsViewModel> {
 
         let albumsCollectionViewLayout = albumsCollectionView!.collectionViewLayout
             as! UICollectionViewFlowLayout
-
 
         let photosCollectionViewLayout = photosCollectionView.collectionViewLayout
             as! UICollectionViewFlowLayout
