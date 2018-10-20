@@ -31,7 +31,7 @@ final class PlaceholderLoadingView: UIView, NibLoadable {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        loadingLabel.text = "TODO"
+        loadingLabel.text = AppConstants.loadingIndicatorMessage
         isHidden = true
     }
 
